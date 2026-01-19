@@ -1,6 +1,7 @@
 import Image from "next/image";
 import HeroSection from "./components/Hero";
 import ScrollVelocity from "./components/ScrollVelocity";
+import ScrollReveal from "./components/ScrollReveal";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
   velocity={100}
   className="custom-scroll-text"
 />
+
 </div>
   );
 }
