@@ -93,7 +93,7 @@ const HeroSection = () => {
               Services
             </a>
             <button 
-              className="px-8 py-3 bg-white text-black rounded-full hover:bg-gray-200 transition-colors flex items-center gap-2"
+              className="px-6 py-2 bg-white text-black rounded-full hover:bg-gray-200 transition-colors flex items-center gap-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
@@ -165,7 +165,7 @@ const HeroSection = () => {
 
           {/* Explore Button */}
           <div className="mt-12">
-            <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-colors flex items-center gap-2 mx-auto">
+            <button className="text-lg px-6 py-2 bg-[#1c3e8d] hover:bg-blue-700 text-white rounded-2xl border border-3 border-white   transition-colors flex items-center gap-2 mx-auto">
               Explore
               <svg 
                 className="w-5 h-5" 
