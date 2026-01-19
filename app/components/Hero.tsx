@@ -8,11 +8,15 @@ const HeroSection = () => {
     <div className="relative min-h-screen bg-black text-white overflow-hidden font-['Poppins']">
       {/* Navbar */}
       <nav className="absolute top-0 left-0 right-0 z-20 px-6 py-6">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+        <div className="max-w-full mx-auto flex items-center justify-between">
           {/* Logo */}
-          <div className="text-2xl font-bold tracking-wider">
-            TXRS
-          </div>
+          <div className="h-8 md:h-10 w-auto">
+  <img 
+    src="/logo.png"  // Place your logo as public/logo.png (or .svg, .jpg)
+    alt="TXRS Logo"
+    className="h-full w-auto object-contain"
+  />
+</div>
           
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center gap-8">
@@ -149,7 +153,7 @@ const HeroSection = () => {
           </div>
 
           {/* Main Title */}
-          <h1 className="text-7xl md:text-[12rem] lg:text-[16rem] font-bold tracking-wider leading-none">
+          <h1 className="text-7xl md:text-[12rem] lg:text-[16rem] font-bold tracking-[0.2em] leading-none">
             TARS
           </h1>
 
