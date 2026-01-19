@@ -3,6 +3,7 @@ import HeroSection from "./components/Hero";
 import ScrollVelocity from "./components/ScrollVelocity";
 import ScrollReveal from "./components/ScrollReveal";
 import BrandVisible from "./components/BrandVisible";
+import FlipCardSection from "./components/FlipCardSection";
 import { ReactLenis } from 'lenis/react';
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
           className="custom-scroll-text"
         />
         <BrandVisible />
+        <FlipCardSection />
       </div>
     </ReactLenis>
   );
