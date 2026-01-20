@@ -4,6 +4,7 @@ import ScrollVelocity from "./components/ScrollVelocity";
 import ScrollReveal from "./components/ScrollReveal";
 import BrandVisible from "./components/BrandVisible";
 import FlipCardSection from "./components/FlipCardSection";
+import StatsSection from "./components/StatsSection";
 import { ReactLenis } from 'lenis/react';
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
         />
         <BrandVisible />
         <FlipCardSection />
+        <StatsSection />
       </div>
     </ReactLenis>
   );
