@@ -159,7 +159,7 @@ const FlipCardSection = () => {
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex ">
               {cardData.map((card) => (
-                <div className="flex-[0_0_100%] sm:flex-[0_0_50%] min-w-0 pr-4" key={card.id}>
+                <div className="flex-[0_0_100%] sm:flex-[0_0_50%] min-w-0 " key={card.id}>
                   <FlipCard data={card} isMobile={true} />
                 </div>
               ))}
