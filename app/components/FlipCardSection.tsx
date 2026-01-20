@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Zap, Mail, Flame } from 'lucide-react';
+import { FaBolt, FaEnvelope, FaFire } from 'react-icons/fa';
 
 interface CardData {
   id: number;
@@ -13,49 +13,49 @@ interface CardData {
 const cardData: CardData[] = [
   {
     id: 1,
-    icon: <Zap size={64} className="text-black" />,
+    icon: <FaBolt size={200} className="text-[#1c1c1c]" />,
     title: "Fast Speed",
     description: "Our network provides the infrastructure to scale decentralized AI3.0 applications on-chain—hyper-scalable permanent data storage, super fast data availability."
   },
   {
     id: 2,
-    icon: <Mail size={64} className="text-black" />,
+    icon: <FaEnvelope size={200} className="text-[#1c1c1c]" />,
     title: "Social Media Boost",
     description: "Our network provides the infrastructure to scale decentralized AI3.0 applications on-chain—hyper-scalable permanent data storage, super fast data availability."
   },
   {
     id: 3,
-    icon: <Flame size={64} className="text-black" />,
+    icon: <FaFire size={200} className="text-[#1c1c1c]" />,
     title: "High Performance",
     description: "Our network provides the infrastructure to scale decentralized AI3.0 applications on-chain—hyper-scalable permanent data storage, super fast data availability."
   },
   {
     id: 4,
-    icon: <Zap size={64} className="text-black" />,
+    icon: <FaBolt size={200} className="text-[#1c1c1c]" />,
     title: "Scalability",
     description: "Our network provides the infrastructure to scale decentralized AI3.0 applications on-chain—hyper-scalable permanent data storage, super fast data availability."
   },
   {
     id: 5,
-    icon: <Zap size={64} className="text-black" />,
+    icon: <FaBolt size={200} className="text-[#1c1c1c]" />,
     title: "Fast Speed",
     description: "Our network provides the infrastructure to scale decentralized AI3.0 applications on-chain—hyper-scalable permanent data storage, super fast data availability."
   },
   {
     id: 6,
-    icon: <Mail size={64} className="text-black" />,
+    icon: <FaEnvelope size={200} className="text-[#1c1c1c]" />,
     title: "Social Media Boost",
     description: "Our network provides the infrastructure to scale decentralized AI3.0 applications on-chain—hyper-scalable permanent data storage, super fast data availability."
   },
   {
     id: 7,
-    icon: <Flame size={64} className="text-black" />,
+    icon: <FaFire size={200} className="text-[#1c1c1c]" />,
     title: "High Performance",
     description: "Our network provides the infrastructure to scale decentralized AI3.0 applications on-chain—hyper-scalable permanent data storage, super fast data availability."
   },
   {
     id: 8,
-    icon: <Zap size={64} className="text-black" />,
+    icon: <FaBolt size={200} className="text-[#1c1c1c]" />,
     title: "Scalability",
     description: "Our network provides the infrastructure to scale decentralized AI3.0 applications on-chain—hyper-scalable permanent data storage, super fast data availability."
   }
@@ -64,27 +64,26 @@ const cardData: CardData[] = [
 const FlipCard = ({ data }: { data: CardData }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
-  const handleInteraction = () => {
-    // Only toggle on click for mobile/touch devices or if user prefers clicking
-    // The CSS hover state handles desktop hover
-  };
-
   return (
     <div 
-      className="group perspective-1000 w-full aspect-square cursor-pointer"
+      className="group perspective-[1000px] w-full aspect-square cursor-pointer"
       onClick={() => setIsFlipped(!isFlipped)}
     >
-      <div className={`relative w-full h-full transition-transform duration-500 transform-style-3d ${isFlipped ? 'rotate-y-180' : 'group-hover:rotate-y-180'}`}>
+      <div 
+        className={`relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] ${
+          isFlipped ? '[transform:rotateY(180deg)]' : 'group-hover:[transform:rotateY(180deg)]'
+        }`}
+      >
         {/* Front Side */}
-        <div className="absolute w-full h-full backface-hidden bg-[#2b52ba] border-2 border-black">
+        <div className="absolute w-full h-full [backface-visibility:hidden] bg-[#1c3e8d] border-3 border-[#1c1c1c]">
           <div className="relative w-full h-full">
              <Image 
                src="/hotel.jpg" 
                alt="Card Background" 
                fill
-               className="object-cover opacity-50 mix-blend-multiply"
+               className="object-cover opacity-50 "
              />
-             <div className="absolute inset-0 bg-[#2b52ba]/60 mix-blend-multiply"></div>
+             <div className="absolute inset-0 bg-[#1c3e8d]/60 "></div>
              <div className="absolute inset-0 flex items-center justify-center">
                 {data.icon}
              </div>
@@ -92,15 +91,15 @@ const FlipCard = ({ data }: { data: CardData }) => {
         </div>
 
         {/* Back Side */}
-        <div className="absolute w-full h-full backface-hidden rotate-y-180 bg-[#2b52ba] text-white p-6 flex flex-col justify-center border-2 border-black">
+        <div className="absolute w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] bg-[#1c3e8d] text-[#f2efe9] p-6 flex flex-col justify-center border-3 border-[#1c1c1c]">
            <div className="relative z-10">
-              <h3 className="text-2xl font-bold mb-4">{data.title}</h3>
+              <h3 className="text-4xl font-bold mb-4">{data.title}</h3>
               <p className="text-sm md:text-base leading-relaxed opacity-90">
                 {data.description}
               </p>
            </div>
            {/* Background overlay for readability if needed, reusing the same style */}
-           <div className="absolute inset-0 bg-[#2b52ba] -z-0"></div>
+           <div className="absolute inset-0 bg-[#1c3e8d] -z-0"></div>
         </div>
       </div>
     </div>
@@ -109,7 +108,7 @@ const FlipCard = ({ data }: { data: CardData }) => {
 
 const FlipCardSection = () => {
   return (
-    <section className="bg-[#EFEEE9] py-24 px-6 md:px-16 w-full">
+    <section className="bg-[#f2efe9] py-24 px-6 md:px-16 w-full">
       <div className="max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {cardData.map((card) => (
