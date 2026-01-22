@@ -6,6 +6,7 @@ import BrandVisible from "./components/BrandVisible";
 import FlipCardSection from "./components/FlipCardSection";
 import StatsSection from "./components/StatsSection";
 import { ReactLenis } from 'lenis/react';
+import HorizontalScroll from "./components/HorizontalScroll";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <BrandVisible />
         <FlipCardSection />
         <StatsSection />
+        <HorizontalScroll/>
       </div>
     </ReactLenis>
   );
