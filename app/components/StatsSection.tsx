@@ -10,6 +10,8 @@ const StatsSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
+  const countRef1 = useRef<HTMLSpanElement>(null);
+  const countRef2 = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -52,6 +54,29 @@ const StatsSection = () => {
           }
         }
       );
+
+      // Animate Numbers
+      [
+        { ref: countRef1.current, end: 72 },
+        { ref: countRef2.current, end: 100 }
+      ].forEach(({ ref, end }) => {
+        if (!ref) return;
+        const counter = { val: 0 };
+        gsap.to(counter, {
+          val: end,
+          duration: 2,
+          ease: "power1.out",
+          scrollTrigger: {
+            trigger: grid,
+            start: "top 85%",
+            toggleActions: "play none none reverse"
+          },
+          onUpdate: () => {
+            ref.textContent = Math.floor(counter.val) + "+";
+          }
+        });
+      });
+
     }, section);
 
     return () => ctx.revert();
@@ -77,7 +102,7 @@ const StatsSection = () => {
               <FaArrowRight className="transform -rotate-45 text-2xl md:text-3xl" />
             </div>
             <div className="text-center">
-              <span className="text-6xl md:text-8xl font-bold block mb-2">72+</span>
+              <span ref={countRef1} className="text-6xl md:text-8xl font-bold block mb-2">0+</span>
               <span className="text-lg md:text-xl font-semibold tracking-widest uppercase">CLIENTS</span>
             </div>
           </div>
@@ -102,7 +127,7 @@ const StatsSection = () => {
               <FaArrowRight className="transform rotate-45 text-2xl md:text-3xl" />
             </div>
              <div className="text-center">
-              <span className="text-6xl md:text-8xl font-bold block mb-2">100+</span>
+              <span ref={countRef2} className="text-6xl md:text-8xl font-bold block mb-2">0+</span>
               <span className="text-lg md:text-xl font-semibold tracking-widest uppercase">PROJECTS</span>
             </div>
           </div>
