@@ -83,8 +83,8 @@ const StatsSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-[#f2efe9] py-24 px-6 md:px-16 w-full">
-      <div className="max-w-[1400px] mx-auto">
+    <section ref={sectionRef} className="bg-[#f2efe9] py-24 w-full">
+      <div className="max-w-full mx-auto">
         
         {/* Title */}
         <h2 ref={titleRef} className="text-4xl md:text-6xl font-bold text-center mb-16 tracking-tight uppercase">
