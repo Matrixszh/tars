@@ -23,6 +23,11 @@ export default function Home() {
         <FlipCardSection />
         <StatsSection />
         <HorizontalScroll/>
+        <ScrollVelocity
+          texts={['SERVICES . SERVICES . SERVICES . SERVICES .', 'SERVICES . SERVICES . SERVICES . SERVICES . SERVICES']} 
+          velocity={100}
+          className="custom-scroll-text bg-[#1c1c1c]"
+        />
       </div>
     </ReactLenis>
   );
