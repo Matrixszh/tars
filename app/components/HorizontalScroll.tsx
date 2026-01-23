@@ -13,7 +13,7 @@ const items = [
   {
     id: 2,
     title: "WORK",
-    color: "bg-[#1c3e8d]",
+    color: "bg-[#D91F26]",
     img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=600&fit=crop"
   },
   {
@@ -25,7 +25,7 @@ const items = [
   {
     id: 4,
     title: "INSPIRATION",
-    color: "bg-[#1c3e8d]",
+    color: "bg-[#D91F26]",
     img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=600&fit=crop"
   },
   {
