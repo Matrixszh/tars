@@ -282,7 +282,7 @@ function DialogContainer({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{
-              duration: 0.2,
+              duration: 0.6,
               ease: [0.4, 0.0, 0.4, 1],
             }}
             onClick={() => setIsOpen(false)}

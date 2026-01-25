@@ -7,6 +7,7 @@ import FlipCardSection from "./components/FlipCardSection";
 import StatsSection from "./components/StatsSection";
 import { ReactLenis } from 'lenis/react';
 import HorizontalScroll from "./components/HorizontalScroll";
+import Testimonials from "./components/Testimonials";
 import {
   Dialog,
   DialogTrigger,
@@ -19,6 +20,9 @@ import {
 } from '@/components/linear-modal';
 import { Plus, Paintbrush, Globe, MousePointer2, Layout } from 'lucide-react';
 
+import LogoLoop from './components/LogoLoop';
+import Footer from './components/Footer';
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
 const preview = {
   galleryNew: { src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80" },
   globe: { src: "/globe.svg" },
@@ -62,6 +66,20 @@ const items = [
   },
 ];
 
+const techLogos = [
+  { node: <SiReact />, title: "React", href: "https://react.dev" },
+  { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
+  { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
+  { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+];
+
+// Alternative with image sources
+const imageLogos = [
+  { src: "/logos/company1.png", alt: "Company 1", href: "https://company1.com" },
+  { src: "/logos/company2.png", alt: "Company 2", href: "https://company2.com" },
+  { src: "/logos/company3.png", alt: "Company 3", href: "https://company3.com" },
+];
+
 export default function Home() {
   return (
     <ReactLenis root>
@@ -84,7 +102,7 @@ export default function Home() {
         />
       </div>
       <div className='bg-[#f3f1eb] py-20 px-4'>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto'>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-4 max-w-full mx-auto'>
           <div className='md:col-span-2 flex items-center justify-center p-8'>
              <h2 className='text-5xl md:text-7xl font-bold text-[#1c1c1c] uppercase tracking-tighter text-center leading-tight'>
                 Know the tools<br/>win the game
@@ -96,8 +114,8 @@ export default function Home() {
                 key={item.id}
                 transition={{
                   type: 'spring',
-                  bounce: 0.05,
-                  duration: 0.5,
+                  bounce: 0.5,
+                  duration: 0.9,
                 }}
               >
                 <DialogTrigger
@@ -120,8 +138,7 @@ export default function Home() {
                   {/* Hidden DialogImage to maintain transition logic if needed, or we can just rely on the content */}
                   <div className="hidden">
                     <DialogImage
-                      // @ts-ignore
-                      src={item.url?.src}
+                      src={item.url?.src || ''}
                       alt=''
                       className='h-0 w-0'
                     />
@@ -166,6 +183,28 @@ export default function Home() {
           })}
         </div>
       </div>
+      <ScrollVelocity
+          texts={['TESTIMONIALS . TESTIMONIALS . TESTIMONIALS . TESTIMONIALS .', 'TESTIMONIALS . TESTIMONIALS . TESTIMONIALS . TESTIMONIALS . TESTIMONIALS']} 
+          velocity={100}
+          className="custom-scroll-text"
+        />
+      <Testimonials />
+       <div style={{ height: '100px', position: 'relative', overflow: 'hidden', backgroundColor: '#f2efe9'}}>
+      {/* Basic horizontal loop */}
+      <LogoLoop
+        logos={techLogos}
+        speed={100}
+        direction="left"
+        logoHeight={60}
+        gap={60}
+        hoverSpeed={0}
+        scaleOnHover
+        fadeOut
+        fadeOutColor="#f2efe9"
+        ariaLabel="Technology partners"
+      />
+    </div>
+    <Footer />
     </ReactLenis>
   );
 }
