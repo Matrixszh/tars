@@ -144,21 +144,21 @@ export default function Home() {
                     />
                   </div>
                 </DialogTrigger>
-                <DialogContainer className='pt-20' overlayClassName='dark:bg-[radial-gradient(125%_125%_at_50%_10%,#050505_40%,#1b1b1b_100%)] bg-[radial-gradient(125%_125%_at_50%_10%,#ffffff_40%,#b1b1b1_100%)]'>
+                <DialogContainer className='pt-10 md:pt-20' overlayClassName='bg-[radial-gradient(125%_125%_at_50%_10%,#050505_40%,#1b1b1b_100%)]'>
                   <DialogContent
                     style={{
                       borderRadius: '24px',
                     }}
-                    className=' relative flex h-full mx-auto flex-col overflow-y-auto border dark:bg-black bg-white hover:bg-neutral-50 dark:hover:bg-neutral-950 lg:w-[900px] w-[80%] '
+                    className='relative flex h-auto max-h-[85vh] md:h-full mx-auto flex-col overflow-y-auto border border-zinc-800 bg-black hover:bg-neutral-950 lg:w-[900px] w-[95%] md:w-[80%]'
                   >
                     <DialogImage
                       // @ts-ignore
                       src={item.url.src}
                       alt=''
-                      className='h-full  object-contain w-[60%] mx-auto'
+                      className='h-auto max-h-[40vh] md:max-h-[60vh] md:h-full object-contain w-full md:w-[60%] mx-auto mt-4 md:mt-0'
                     />
                     <div className='p-6'>
-                      <DialogTitle className='text-5xl text-zinc-950 dark:text-zinc-50'>
+                      <DialogTitle className='text-3xl md:text-5xl text-white'>
                         {item.title}
                       </DialogTitle>
 
@@ -170,12 +170,12 @@ export default function Home() {
                           exit: { opacity: 0, scale: 0.8, y: -50 },
                         }}
                       >
-                        <p className='mt-2 text-zinc-500 dark:text-zinc-500'>
+                        <p className='mt-2 text-zinc-300'>
                           {item.description}
                         </p>
                       </DialogDescription>
                     </div>
-                    <DialogClose className='text-zinc-50  dark:bg-neutral-900 bg-neutral-200 p-4 hover:bg-neutral-500 rounded-lg dark:hover:bg-neutral-800' />
+                    <DialogClose className='text-white bg-zinc-800 p-4 hover:bg-zinc-700 rounded-lg' />
                   </DialogContent>
                 </DialogContainer>
               </Dialog>
