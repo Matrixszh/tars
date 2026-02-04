@@ -14,8 +14,8 @@ export default function AboutPage() {
           title="ABOUT" 
           backgroundElement={
             <LightPillar
-              topColor="#1c3e8d"
-              bottomColor="#1c3e8d"
+              topColor="#ffffff"
+              bottomColor="#0096ff"
               intensity={1}
               rotationSpeed={0.1}
               glowAmount={0.002}
