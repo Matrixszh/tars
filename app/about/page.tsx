@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import HeroSection from "../components/Hero";
 import Footer from "../components/Footer";
 import LightPillar from "../components/LightPillar";
+import CurvedLoop from "@/components/CurvedLoop";
 
 export default function AboutPage() {
   return (
@@ -29,6 +30,9 @@ export default function AboutPage() {
             />
           }
         />
+
+
+
         {/* What We Do - Brief Message */}
         <section className="py-24 px-6 md:px-12 max-w-[1400px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -56,6 +60,14 @@ export default function AboutPage() {
             </motion.div>
           </div>
         </section>
+<CurvedLoop 
+  marqueeText="Be ✦ Creative ✦ With ✦ React ✦ Bits ✦"
+  speed={2}
+  curveAmount={200}
+  direction="right"
+  interactive
+  className="custom-text-style bg-[#1c3e8d]"
+/>
 
         {/* Our Vision */}
         <section className="py-24 px-6 md:px-12 bg-[#1c1c1c] text-[#f2efe9]">

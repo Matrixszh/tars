@@ -93,6 +93,11 @@ export default function Home() {
         />
         <BrandVisible />
         <FlipCardSection />
+        <ScrollVelocity
+          texts={['STATS . STATS . STATS . STATS .', 'STATS . STATS . STATS . STATS . STATS']} 
+          velocity={50}
+          className="custom-scroll-text bg-[#D91F26]"
+        />
         <StatsSection />
         <HorizontalScroll/>
         <ScrollVelocity
