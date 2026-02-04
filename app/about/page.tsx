@@ -2,35 +2,33 @@
 import React from "react";
 import { ReactLenis } from "lenis/react";
 import { motion } from "motion/react";
-import Navbar from "../components/Navbar";
+import HeroSection from "../components/Hero";
 import Footer from "../components/Footer";
+import LightPillar from "../components/LightPillar";
 
 export default function AboutPage() {
   return (
     <ReactLenis root>
       <div className="bg-[#f2efe9] min-h-screen font-['Poppins']">
-        <Navbar />
-        
-        {/* Header Section */}
-        <section className="relative h-[60vh] md:h-[70vh] flex items-center justify-center bg-[#1c1c1c] overflow-hidden">
-             <div 
-                className="absolute inset-0 z-0 bg-cover bg-center opacity-40"
-                style={{
-                  backgroundImage: "url('/hotel.jpg')",
-                }}
-              />
-          <div className="relative z-10 text-center px-4">
-            <motion.h1 
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-6xl md:text-9xl font-bold text-white tracking-tighter uppercase"
-            >
-              About Us
-            </motion.h1>
-          </div>
-        </section>
-
+        <HeroSection 
+          title="ABOUT" 
+          backgroundElement={
+            <LightPillar
+              topColor="#ff2929"
+              bottomColor="#ff2600"
+              intensity={1}
+              rotationSpeed={0.1}
+              glowAmount={0.002}
+              pillarWidth={3}
+              pillarHeight={0.4}
+              noiseIntensity={0.5}
+              pillarRotation={25}
+              interactive={false}
+              mixBlendMode="screen"
+              quality="high"
+            />
+          }
+        />
         {/* What We Do - Brief Message */}
         <section className="py-24 px-6 md:px-12 max-w-[1400px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">

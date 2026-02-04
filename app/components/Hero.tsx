@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'motion/react';
 
-const HeroSection = () => {
+const HeroSection = ({ title = "TARS", backgroundElement }: { title?: string; backgroundElement?: React.ReactNode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Mouse position state for parallax
@@ -33,7 +33,7 @@ const HeroSection = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.3
+        delayChildren: 3.0
       }
     }
   };
@@ -73,10 +73,10 @@ const HeroSection = () => {
             {['Home', 'About', 'Services'].map((item, i) => (
               <motion.a 
                 key={item}
-                href={`#${item.toLowerCase()}`}
+                href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 + i * 0.1 }}
+                transition={{ delay: 3.2 + i * 0.1 }}
                 className="text-xl font-light hover:text-gray-300 transition-colors"
               >
                 {item}
@@ -85,8 +85,8 @@ const HeroSection = () => {
             <motion.button 
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.8 }}
-              className="px-6 py-2 bg-white text-[#1c3e8d] rounded-2xl font-semisbold hover:bg-gray-200 border border-3 border-[#1c3e8d] transition-colors flex items-center gap-2"
+              transition={{ delay: 3.5 }}
+              className="px-6 py-2 bg-white text-[#1c3e8d] rounded-2xl font-semibold hover:bg-gray-200 border border-3 border-[#1c3e8d] transition-colors flex items-center gap-2"
             >
               Contact
               <svg 
@@ -173,15 +173,21 @@ const HeroSection = () => {
         </div>
       </nav>
 
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/hotel.jpg')",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/70"></div>
-      </div>
+      {/* Background */}
+      {backgroundElement ? (
+        <div className="absolute inset-0 z-0 overflow-hidden bg-black">
+          {backgroundElement}
+        </div>
+      ) : (
+        <div 
+          className="absolute inset-0 z-0 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/hotel.jpg')",
+          }}
+        >
+          <div className="absolute inset-0 bg-black/70"></div>
+        </div>
+      )}
 
       {/* Hero Content */}
       <div className="relative z-10 flex items-center justify-center min-h-screen px-6">
@@ -214,7 +220,7 @@ const HeroSection = () => {
               animate="visible"
               className="text-7xl md:text-[20rem] lg:text-[20rem] font-bold tracking-[0.2em] leading-none cursor-default"
             >
-              {Array.from("TARS").map((letter, index) => (
+              {Array.from(title).map((letter, index) => (
                 <motion.span
                   key={index}
                   variants={letterVariants}
@@ -235,7 +241,7 @@ const HeroSection = () => {
           <motion.div 
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 1.2, duration: 0.5 }}
+            transition={{ delay: 3.8, duration: 0.5 }}
             className="absolute -bottom-8 -right-8 md:-bottom-12 md:-right-12"
           >
             <svg 
@@ -252,7 +258,7 @@ const HeroSection = () => {
           <motion.div 
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 1.5, type: "spring" }}
+            transition={{ delay: 4.0, type: "spring" }}
             className="mt-12"
           >
             <button className="text-lg px-6 py-2 bg-[#1c3e8d] hover:bg-blue-700 text-white rounded-2xl border border-3 border-white transition-all hover:scale-105 active:scale-95 flex items-center gap-2 mx-auto">
