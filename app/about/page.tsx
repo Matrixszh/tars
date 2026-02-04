@@ -14,14 +14,14 @@ export default function AboutPage() {
           title="ABOUT" 
           backgroundElement={
             <LightPillar
-              topColor="#ffffff"
-              bottomColor="#0096ff"
+              topColor="#0096ff"
+              bottomColor="#0004ff"
               intensity={1}
-              rotationSpeed={0.1}
+              rotationSpeed={0.6}
               glowAmount={0.002}
               pillarWidth={3}
               pillarHeight={0.4}
-              noiseIntensity={0.5}
+              noiseIntensity={0}
               pillarRotation={25}
               interactive={false}
               mixBlendMode="screen"

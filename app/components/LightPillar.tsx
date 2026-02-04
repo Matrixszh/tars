@@ -21,10 +21,10 @@ const LightPillar: React.FC<LightPillarProps> = ({
   topColor = '#5227FF',
   bottomColor = '#FF9FFC',
   intensity = 1.0,
-  rotationSpeed = 0.3,
+  rotationSpeed = 0.9,
   interactive = false,
   className = '',
-  glowAmount = 0.005,
+  glowAmount = 0.5,
   pillarWidth = 3.0,
   pillarHeight = 0.4,
   noiseIntensity = 0.5,
@@ -316,7 +316,7 @@ const LightPillar: React.FC<LightPillarProps> = ({
 
     // Animation loop with fixed timestep
     let lastTime = performance.now();
-    const targetFPS = effectiveQuality === 'low' ? 30 : 60;
+    const targetFPS = effectiveQuality === 'high' ? 30 : 60;
     const frameTime = 1000 / targetFPS;
 
     const animate = (currentTime: number) => {
