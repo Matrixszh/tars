@@ -10,7 +10,7 @@ import CurvedLoop from "@/components/CurvedLoop";
 export default function AboutPage() {
   return (
     <ReactLenis root>
-      <div className="bg-[#f2efe9] min-h-screen font-['Poppins']">
+      <div className="bg-[#1c1c1c] min-h-screen font-['Poppins'] ">
         <HeroSection 
           title="ABOUT" 
           backgroundElement={
@@ -34,7 +34,7 @@ export default function AboutPage() {
 
 
         {/* What We Do - Brief Message */}
-        <section className="py-24 px-6 md:px-12 max-w-[1400px] mx-auto">
+        <section className="bg-[#f2efe9] py-24 px-6 md:px-12 max-w-full mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -60,15 +60,16 @@ export default function AboutPage() {
             </motion.div>
           </div>
         </section>
-<CurvedLoop 
-  marqueeText="Be ✦ Creative ✦ With ✦ React ✦ Bits ✦"
-  speed={2}
-  curveAmount={200}
-  direction="right"
-  interactive
-  className="custom-text-style bg-[#1c3e8d]"
-/>
-
+<div className="bg-[#f2efe9] rounded-b-full ">
+  <CurvedLoop 
+    marqueeText="Be ✦ Creative ✦ With ✦ React ✦ Bits ✦"
+    speed={5}
+    curveAmount={1000}
+    direction="right"
+    interactive
+    className="custom-text-style"
+  />
+</div>
         {/* Our Vision */}
         <section className="py-24 px-6 md:px-12 bg-[#1c1c1c] text-[#f2efe9]">
           <div className="max-w-[1400px] mx-auto text-center">
@@ -89,30 +90,45 @@ export default function AboutPage() {
         </section>
 
         {/* Our Mission */}
-        <section className="py-24 px-6 md:px-12 bg-[#D91F26] text-white">
-          <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+        <section className=" bg-[#f2efe9] text-[#1c1c1c]">
+          <div className="max-w-full mx-auto grid grid-cols-1 md:grid-cols-2  items-center">
+            <motion.div
+               initial={{ opacity: 0, x: -30 }}
+               whileInView={{ opacity: 1, x: 0 }}
+               viewport={{ once: true }}
+               transition={{ duration: 0.8, delay: 0.2 }}
+               className="flex items-center"
+            >
+              <p className="py-8 px-8 text-xl md:text-3xl font-medium leading-relaxed">
+                To empower brands with cutting-edge tools and strategies. We strive to deliver scalable, 
+                high-performance solutions that not only meet today's demands but anticipate tomorrow's challenges.
+                We believe in the power of "Passion, Work, and Belief" to drive extraordinary outcomes.
+              </p>
+            </motion.div>
             <motion.div
                initial={{ opacity: 0, scale: 0.9 }}
                whileInView={{ opacity: 1, scale: 1 }}
                viewport={{ once: true }}
                transition={{ duration: 0.8 }}
-               className="flex flex-col justify-center"
+               className="relative flex flex-col justify-center items-center p-12 h-full  overflow-hidden group"
             >
-               <h2 className="text-5xl md:text-7xl font-bold mb-6">OUR MISSION</h2>
-               <div className="h-2 w-24 bg-white mb-8"></div>
-            </motion.div>
-            <motion.div
-               initial={{ opacity: 0, y: 30 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ duration: 0.8, delay: 0.2 }}
-               className="flex items-center"
-            >
-              <p className="text-xl md:text-3xl font-medium leading-relaxed">
-                To empower brands with cutting-edge tools and strategies. We strive to deliver scalable, 
-                high-performance solutions that not only meet today's demands but anticipate tomorrow's challenges.
-                We believe in the power of "Passion, Work, and Belief" to drive extraordinary outcomes.
-              </p>
+               {/* Background Image */}
+               <div className="absolute inset-0 z-0">
+                  <img 
+                    src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1600&q=80" 
+                    alt="Mission Background"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+               </div>
+               
+               {/* Red Glassy Overlay */}
+               <div className="absolute inset-0 z-10 bg-[#ff0008] mix-blend-multiply opacity-100"></div>
+
+               {/* Content */}
+               <div className="relative z-20 text-white text-center">
+                   <h2 className="text-5xl md:text-7xl font-bold mb-6">OUR MISSION</h2>
+                   <div className="h-2 w-24 bg-white mx-auto mb-8"></div>
+               </div>
             </motion.div>
           </div>
         </section>

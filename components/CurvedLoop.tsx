@@ -109,7 +109,7 @@ const CurvedLoop: FC<CurvedLoopProps> = ({
 
   return (
     <div
-      className="pb-[10vh] md:pb-[20vh] flex items-center justify-center w-full"
+      className="rounded-b-full pb-[15vh] md:pb-[65vh] flex items-center justify-center w-full"
       style={{ visibility: ready ? 'visible' : 'hidden', cursor: cursorStyle }}
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
@@ -118,13 +118,14 @@ const CurvedLoop: FC<CurvedLoopProps> = ({
     >
       <svg
         className="select-none w-full overflow-visible block aspect-[100/12] text-[6rem] font-bold uppercase leading-none"
-        viewBox="0 0 1440 120"
+        viewBox="0 0 1440 200"
       >
+        {/* Hidden helper text used to measure the rendered width of one copy of the marquee text */}
         <text ref={measureRef} xmlSpace="preserve" style={{ visibility: 'hidden', opacity: 0, pointerEvents: 'none' }}>
           {text}
         </text>
         <defs>
-          <path ref={pathRef} id={pathId} d={pathD} fill="none" stroke="transparent" />
+          <path ref={pathRef} id={pathId} d={pathD} fill="black" stroke="black" />
         </defs>
         {ready && (
           <text xmlSpace="preserve" className={`fill-[black] ${className ?? ''}`}>
