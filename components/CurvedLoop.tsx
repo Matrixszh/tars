@@ -109,7 +109,7 @@ const CurvedLoop: FC<CurvedLoopProps> = ({
 
   return (
     <div
-      className="rounded-b-full pb-[15vh] md:pb-[65vh] flex items-center justify-center w-full"
+      className="rounded-b-full pl-6 pb-[12vh] md:pb-[45vh] flex items-center justify-center w-full"
       style={{ visibility: ready ? 'visible' : 'hidden', cursor: cursorStyle }}
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
