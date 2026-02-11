@@ -13,25 +13,7 @@ export default function AboutPage() {
       <div className="bg-[#1c1c1c] min-h-screen font-['Poppins'] ">
         
 {/*Hero section here */}
-<HeroSection 
-          title="ABOUT" 
-          backgroundElement={
-            <LightPillar
-              topColor="#0096ff"
-              bottomColor="#0004ff"
-              intensity={1}
-              rotationSpeed={0.6}
-              glowAmount={0.002}
-              pillarWidth={3}
-              pillarHeight={0.4}
-              noiseIntensity={0}
-              pillarRotation={25}
-              interactive={false}
-              mixBlendMode="screen"
-              quality="high"
-            />
-          }
-        />
+
 
         {/* What We Do - Brief Message */}
         <section className="bg-[#f2efe9] py-24 px-6 md:px-12 max-w-full mx-auto rounded-b-[200px] pb-[10vh] ">
@@ -107,11 +89,14 @@ export default function AboutPage() {
                transition={{ duration: 0.8 }}
                className="relative flex flex-col justify-center items-center   p-12 h-[60vh] overflow-hidden group"
             >
-               {/* Background Image */}
+               {/* Background Video */}
                <div className="absolute inset-0 z-0">
-                  <img 
-                    src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1600&q=80" 
-                    alt="Mission Background"
+                  <video
+                    src="/test.mp4" 
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
                     className="w-full h-[100vh] object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                </div>
@@ -152,11 +137,14 @@ export default function AboutPage() {
                transition={{ duration: 0.8 }}
                className="relative flex flex-col rounded-t-full justify-center items-center p-12 h-[100vw] md:h-[40vw] overflow-hidden group"
             >
-               {/* Background Image */}
+               {/* Background Video */}
                <div className="absolute inset-0 z-0">
-                  <img 
-                    src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1600&q=80" 
-                    alt="Mission Background"
+                  <video
+                    src="/test2.mp4" 
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                </div>
