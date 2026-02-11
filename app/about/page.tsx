@@ -13,7 +13,25 @@ export default function AboutPage() {
       <div className="bg-[#1c1c1c] min-h-screen font-['Poppins'] ">
         
 {/*Hero section here */}
-
+      <HeroSection 
+          title="ABOUT" 
+          backgroundElement={
+            <LightPillar
+              topColor="#0096ff"
+              bottomColor="#0004ff"
+              intensity={1}
+              rotationSpeed={0.6}
+              glowAmount={0.002}
+              pillarWidth={3}
+              pillarHeight={0.4}
+              noiseIntensity={0}
+              pillarRotation={25}
+              interactive={false}
+              mixBlendMode="screen"
+              quality="high"
+            />
+          }
+        />
 
         {/* What We Do - Brief Message */}
         <section className="bg-[#f2efe9] py-24 px-6 md:px-12 max-w-full mx-auto rounded-b-[200px] pb-[10vh] ">
