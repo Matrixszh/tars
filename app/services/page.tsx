@@ -79,6 +79,8 @@ export default function ServicesPage() {
       <div className="bg-[#1c1c1c] min-h-screen font-['Poppins']">
         <HeroSection 
           title="SERVICES" 
+          titleSize="text-[12rem]"
+          buttonColor="bg-[#1c3e8d]"
           backgroundElement={
             <div className="w-full h-full">
               <FloatingLines 

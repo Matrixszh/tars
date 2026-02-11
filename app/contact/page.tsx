@@ -4,29 +4,29 @@ import { ReactLenis } from "lenis/react";
 import { motion } from "motion/react";
 import HeroSection from "../components/Hero";
 import Footer from "../components/Footer";
-import LightPillar from "../components/LightPillar";
+import Beams from "../components/Beams"
 
 export default function ContactPage() {
   return (
     <ReactLenis root>
-      <div className="bg-[#f2efe9] min-h-screen font-['Poppins']">
-        <HeroSection 
+      <div className="bg-[#f2efe9] min-h-screen font-['Poppins'] overflow-hidden">
+       <HeroSection 
           title="CONTACT" 
+          titleSize="text-xl md:text-[12rem]"
+          buttonColor="bg-[#D91F26]"
           backgroundElement={
-            <LightPillar
-              topColor="#1c1c1c"
-              bottomColor="#D91F26"
-              intensity={1.2}
-              rotationSpeed={0.4}
-              glowAmount={0.003}
-              pillarWidth={5}
-              pillarHeight={0.5}
-              noiseIntensity={0.1}
-              pillarRotation={0}
-              interactive={true}
-              mixBlendMode="exclusion"
-              quality="high"
-            />
+            <div className="w-full h-full bg-black">
+              <Beams
+                beamWidth={3}
+                beamHeight={30}
+                beamNumber={20}
+                lightColor="#ff0000"
+                speed={2}
+                noiseIntensity={1.75}
+                scale={0.2}
+                rotation={30}
+              />
+            </div>
           }
         />
 

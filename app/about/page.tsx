@@ -10,11 +10,13 @@ import CurvedLoop from "@/components/CurvedLoop";
 export default function AboutPage() {
   return (
     <ReactLenis root>
-      <div className="bg-[#1c1c1c] min-h-screen font-['Poppins'] ">
+      <div className="bg-[#1c1c1c] min-h-screen font-['Poppins'] overflow-hidden">
         
 {/*Hero section here */}
       <HeroSection 
           title="ABOUT" 
+          titleSize="text-[12rem]"
+          buttonColor="bg-[#1c3e8d]"
           backgroundElement={
             <LightPillar
               topColor="#0096ff"

@@ -2,7 +2,17 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'motion/react';
 
-const HeroSection = ({ title = "TARS", backgroundElement }: { title?: string; backgroundElement?: React.ReactNode }) => {
+const HeroSection = ({ 
+  title = "TARS", 
+  backgroundElement,
+  titleSize = "text-[12rem]",
+  buttonColor = "bg-[#1c3e8d]"
+}: { 
+  title?: string; 
+  backgroundElement?: React.ReactNode;
+  titleSize?: string;
+  buttonColor?: string;
+}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Mouse position state for parallax
@@ -53,7 +63,7 @@ const HeroSection = ({ title = "TARS", backgroundElement }: { title?: string; ba
 
   return (
     <div 
-      className="relative min-h-screen bg-black text-white overflow-hidden font-['Poppins']"
+      className="relative w-full h-screen bg-black text-white overflow-hidden font-['Poppins'] max-w-[100vw]"
       onMouseMove={handleMouseMove}
     >
       {/* Navbar */}
@@ -192,14 +202,14 @@ const HeroSection = ({ title = "TARS", backgroundElement }: { title?: string; ba
       )}
 
       {/* Hero Content */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen px-6">
-        <div className="relative text-center">
+      <div className="relative z-10 flex items-center justify-center w-full h-full px-6">
+        <div className="relative text-center max-w-full">
           {/* Spinning Sparkle Icon Top Left */}
           <motion.div 
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 1, duration: 0.5 }}
-            className="absolute -top-8 -left-8 md:-top-12 md:-left-12"
+            className="absolute -top-12 -left-4 md:-top-16 md:-left-16"
           >
             <svg 
               className="w-8 h-8 md:w-12 md:h-12 text-white animate-spin" 
@@ -214,13 +224,13 @@ const HeroSection = ({ title = "TARS", backgroundElement }: { title?: string; ba
           {/* Main Title with Parallax and Letter Animation */}
           <motion.div
             style={{ x: mouseX, y: mouseY }}
-            className="perspective-1000"
+            className="perspective-1000 max-w-full overflow-hidden"
           >
             <motion.h1 
               variants={containerVariants}
               initial="hidden"
               animate="visible"
-              className="text-7xl md:text-[10rem] lg:text-[10rem] font-bold tracking-[0.2em] leading-none cursor-default"
+              className={`text-5xl md:${titleSize} lg:${titleSize} font-bold tracking-[0.1em] md:tracking-[0.2em] leading-none cursor-default whitespace-normal md:whitespace-nowrap break-words`}
             >
               {Array.from(title).map((letter, index) => (
                 <motion.span
@@ -244,7 +254,7 @@ const HeroSection = ({ title = "TARS", backgroundElement }: { title?: string; ba
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 3.8, duration: 0.5 }}
-            className="absolute -bottom-8 -right-8 md:-bottom-12 md:-right-12"
+            className="absolute -bottom-12 -right-4 md:-bottom-16 md:-right-16"
           >
             <svg 
               className="w-8 h-8 md:w-16 md:h-16 text-white animate-spin" 
@@ -263,9 +273,9 @@ const HeroSection = ({ title = "TARS", backgroundElement }: { title?: string; ba
             transition={{ delay: 4.0, type: "spring" }}
             className="mt-12"
           >
-            <button className="text-lg px-6 py-2 bg-[#1c3e8d] hover:bg-blue-700 text-white rounded-2xl border border-3 border-white transition-all hover:scale-105 active:scale-95 flex items-center gap-2 mx-auto">
+            <button className={`text-lg px-6 py-2 ${buttonColor} hover:brightness-110 text-white rounded-2xl border border-3 border-white transition-all hover:scale-105 active:scale-95 flex items-center gap-2 mx-auto`}>
               Explore
-              <svg 
+              <svg  
                 className="w-5 h-5" 
                 fill="none" 
                 stroke="currentColor" 
