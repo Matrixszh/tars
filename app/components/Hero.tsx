@@ -82,7 +82,8 @@ const HeroSection = ({ title = "TARS", backgroundElement }: { title?: string; ba
                 {item}
               </motion.a>
             ))}
-            <motion.button 
+            <motion.a 
+              href="/contact"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 3.5 }}
@@ -102,7 +103,7 @@ const HeroSection = ({ title = "TARS", backgroundElement }: { title?: string; ba
                   d="M14 5l7 7m0 0l-7 7m7-7H3" 
                 />
               </svg>
-            </motion.button>
+            </motion.a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -130,27 +131,28 @@ const HeroSection = ({ title = "TARS", backgroundElement }: { title?: string; ba
         >
           <div className="flex flex-col items-center justify-center h-full gap-8">
             <a 
-              href="#home" 
+              href="/" 
               className="text-2xl hover:text-gray-300 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </a>
             <a 
-              href="#about" 
+              href="/about" 
               className="text-2xl hover:text-gray-300 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               About
             </a>
             <a 
-              href="#services" 
+              href="/services" 
               className="text-2xl hover:text-gray-300 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Services
             </a>
-            <button 
+            <a 
+              href="/contact"
               className="px-6 py-2 bg-white text-black rounded-full hover:bg-gray-200 transition-colors flex items-center gap-2"
               onClick={() => setIsMenuOpen(false)}
             >
@@ -168,7 +170,7 @@ const HeroSection = ({ title = "TARS", backgroundElement }: { title?: string; ba
                   d="M14 5l7 7m0 0l-7 7m7-7H3" 
                 />
               </svg>
-            </button>
+            </a>
           </div>
         </div>
       </nav>
@@ -218,7 +220,7 @@ const HeroSection = ({ title = "TARS", backgroundElement }: { title?: string; ba
               variants={containerVariants}
               initial="hidden"
               animate="visible"
-              className="text-7xl md:text-[20rem] lg:text-[20rem] font-bold tracking-[0.2em] leading-none cursor-default"
+              className="text-7xl md:text-[10rem] lg:text-[10rem] font-bold tracking-[0.2em] leading-none cursor-default"
             >
               {Array.from(title).map((letter, index) => (
                 <motion.span

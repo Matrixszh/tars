@@ -197,7 +197,7 @@ function DialogContent({ children, className, style }: DialogContent) {
       <motion.div
         ref={containerRef}
         layoutId={`dialog-${uniqueId}`}
-        className={cn('overflow-hidden', className)}
+        className={cn('overflow-hidden pointer-events-auto', className)}
         style={{
           ...style,
           willChange: 'transform, opacity', // GPU acceleration
@@ -288,7 +288,7 @@ function DialogContainer({
             onClick={() => setIsOpen(false)}
           ></motion.div>
           <motion.div
-            className={cn(`fixed inset-0 z-50 w-fit mx-auto`, className)}
+            className={cn(`fixed inset-0 z-50 flex items-center justify-center pointer-events-none`, className)}
             style={{ willChange: 'transform' }} // GPU acceleration for transforms
           >
             {children}
