@@ -244,7 +244,7 @@ const HeroSection = ({
         <div 
           className="absolute inset-0 z-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/hotel.jpg')",
+            backgroundImage: "url('/hero.png')",
           }}
         >
           <div className="absolute inset-0 bg-black/70"></div>

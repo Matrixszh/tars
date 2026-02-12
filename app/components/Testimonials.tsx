@@ -40,9 +40,6 @@ export default function Testimonials() {
           <h2 className="text-5xl md:text-7xl font-bold text-[#1c1c1c] uppercase tracking-tighter leading-tight">
             What do our <span className="text-[#1c3e8d]">clients</span> say about us
           </h2>
-          <button className="group flex items-center gap-2 bg-[#1c1c1c] text-white px-6 py-3 rounded-full hover:bg-neutral-800 transition-colors">
-            Explore <MoveRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
         </div>
 
         {/* Right Side */}

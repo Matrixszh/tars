@@ -12,57 +12,33 @@ interface CardData {
   title: string;
   description: string;
 }
-
 const cardData: CardData[] = [
   {
     id: 1,
     icon: <FaBolt size={200} className="text-[#1c1c1c]" />,
-    title: "Fast Speed",
-    description: "Our network provides the infrastructure to scale decentralized AI3.0 applications on-chain—hyper-scalable permanent data storage, super fast data availability."
+    title: "Performance-Driven Strategy",
+    description: "We don’t guess — we analyze. Every campaign is built on real data, audience insights, and measurable KPIs to ensure consistent growth and ROI."
   },
   {
     id: 2,
     icon: <FaEnvelope size={200} className="text-[#1c1c1c]" />,
-    title: "Social Media Boost",
-    description: "Our network provides the infrastructure to scale decentralized AI3.0 applications on-chain—hyper-scalable permanent data storage, super fast data availability."
+    title: "Creative Brand Storytelling",
+    description: "From scroll-stopping visuals to compelling narratives, we craft content that builds emotional connection and makes your brand unforgettable."
   },
   {
     id: 3,
     icon: <FaFire size={200} className="text-[#1c1c1c]" />,
-    title: "High Performance",
-    description: "Our network provides the infrastructure to scale decentralized AI3.0 applications on-chain—hyper-scalable permanent data storage, super fast data availability."
+    title: "Paid Ads That Convert",
+    description: "We design high-converting ad funnels across Meta, Google, and other platforms — optimizing every click, impression, and conversion."
   },
   {
     id: 4,
     icon: <FaBolt size={200} className="text-[#1c1c1c]" />,
-    title: "Scalability",
-    description: "Our network provides the infrastructure to scale decentralized AI3.0 applications on-chain—hyper-scalable permanent data storage, super fast data availability."
-  },
-  {
-    id: 5,
-    icon: <FaBolt size={200} className="text-[#1c1c1c]" />,
-    title: "Fast Speed",
-    description: "Our network provides the infrastructure to scale decentralized AI3.0 applications on-chain—hyper-scalable permanent data storage, super fast data availability."
-  },
-  {
-    id: 6,
-    icon: <FaEnvelope size={200} className="text-[#1c1c1c]" />,
-    title: "Social Media Boost",
-    description: "Our network provides the infrastructure to scale decentralized AI3.0 applications on-chain—hyper-scalable permanent data storage, super fast data availability."
-  },
-  {
-    id: 7,
-    icon: <FaFire size={200} className="text-[#1c1c1c]" />,
-    title: "High Performance",
-    description: "Our network provides the infrastructure to scale decentralized AI3.0 applications on-chain—hyper-scalable permanent data storage, super fast data availability."
-  },
-  {
-    id: 8,
-    icon: <FaBolt size={200} className="text-[#1c1c1c]" />,
-    title: "Scalability",
-    description: "Our network provides the infrastructure to scale decentralized AI3.0 applications on-chain—hyper-scalable permanent data storage, super fast data availability."
+    title: "Scalable Digital Growth",
+    description: "Whether you're a startup or scaling brand, our systems are built to grow with you — expanding reach, leads, and revenue sustainably."
   }
 ];
+
 
 const FlipCard = ({ data, isMobile }: { data: CardData, isMobile?: boolean }) => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -78,7 +54,7 @@ const FlipCard = ({ data, isMobile }: { data: CardData, isMobile?: boolean }) =>
         }`}
       >
         {/* Front Side */}
-        <div className="absolute w-full h-full [backface-visibility:hidden] bg-[#1c3e8d] border-3 border-[#1c1c1c]">
+        <div className="absolute w-full h-full [backface-visibility:hidden] bg-[#1c3e8d] border-4 border-[#1c1c1c]">
           <div className="relative w-full h-full">
              <Image 
                src="/hotel.jpg" 
@@ -99,7 +75,7 @@ const FlipCard = ({ data, isMobile }: { data: CardData, isMobile?: boolean }) =>
         </div>
 
         {/* Back Side */}
-        <div className="absolute w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] bg-[#1c3e8d] text-[#f2efe9] p-6 flex flex-col justify-center border-3 border-[#1c1c1c]">
+        <div className="absolute w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] bg-[#1c3e8d] text-[#f2efe9] p-6 flex flex-col justify-center border-4 border-[#1c1c1c]">
            <div className="relative z-10">
               <h3 className="text-4xl font-bold mb-4">{data.title}</h3>
               <p className="text-sm md:text-base leading-relaxed opacity-90">

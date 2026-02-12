@@ -3,6 +3,7 @@ import React, { useRef, useEffect } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import ButtonCreativeRight from './ButtonFancy';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -108,17 +109,23 @@ const StatsSection = () => {
           </div>
 
           {/* Item 2: Text Description */}
-          <div className="grid-item bg-[#f2efe9] aspect-square md:aspect-auto md:h-[400px] p-8 md:p-12 flex items-center justify-center">
+          <div className="items-flex grid-item bg-[#f2efe9] aspect-square md:aspect-auto md:h-[400px] p-8 md:p-12 flex flex-col items-center justify-center gap-6">
             <p className="text-[#1c1c1c] text-lg md:text-xl leading-relaxed font-medium">
               Our network provides the infrastructure to scale decentralized AI3.0 applications on-chain—hyper-scalable permanent data storage, super fast data availability & flexible EVM-compatible decoupled execution.
             </p>
+            <div className="w-full flex justify-start">
+              <ButtonCreativeRight label="Explore" href="/services" bgColor='#D91F26' textColor='white' />
+            </div>
           </div>
 
           {/* Item 3: Text Description */}
-          <div className="grid-item bg-[#f2efe9] aspect-square md:aspect-auto md:h-[400px] p-8 md:p-12 flex items-center justify-center order-4 md:order-3">
+          <div className="items-flex grid-item bg-[#f2efe9] aspect-square md:aspect-auto md:h-[400px] p-8 md:p-12 flex flex-col items-center justify-center gap-6">
              <p className="text-[#1c1c1c] text-lg md:text-xl leading-relaxed font-medium">
               Our network provides the infrastructure to scale decentralized AI3.0 applications on-chain—hyper-scalable permanent data storage, super fast data availability & flexible EVM-compatible decoupled execution.
             </p>
+            <div className="w-full flex justify-start">
+              <ButtonCreativeRight label="Explore" href="/services" bgColor='#D91F26' textColor='white' />
+            </div>
           </div>
 
           {/* Item 4: Red Box (100+ PROJECTS) */}

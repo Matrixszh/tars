@@ -6,6 +6,60 @@ import HeroSection from "../components/Hero";
 import Footer from "../components/Footer";
 import LightPillar from "../components/LightPillar";
 import CurvedLoop from "@/components/CurvedLoop";
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogTitle,
+  DialogImage,
+  DialogClose,
+  DialogDescription,
+  DialogContainer,
+} from '@/components/linear-modal';
+import { Plus, Paintbrush, Globe, MousePointer2, Layout, Target, Code, Megaphone } from 'lucide-react';
+
+const preview = {
+  galleryNew: { src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80" },
+  globe: { src: "/globe.svg" },
+  mousetrail: { src: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80" },
+  scrollReveal: { src: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80" }
+};
+
+const items = [
+  {
+    id: 1,
+    url: preview.scrollReveal,
+    title: "PPC (Google Ads)",
+    Icon: Target,
+    description:
+      "Capture intent when it matters most. We architect high-performance Google Ads campaigns that channel high-intent traffic. From keyword strategy to conversion tracking, every click is an investment in your bottom line.",
+    tags: ["Google Ads", "SEM", "Conversion", "ROI"],
+  },
+  {
+    id: 2,
+    url: preview.globe,
+    title: "Web Development",
+    Icon: Code,
+    description: `Digital experiences engineered for conversion. We don't just build websites; we develop fast, scalable, and intuitive web applications. Our focus is on seamless user journeys that transform casual browsers into brand advocates.`,
+    tags: ["React", "Next.js", "UX/UI", "Scalable"],
+  },
+  {
+    id: 3,
+    url: preview.mousetrail,
+    title: "Strategic Social Advertising",
+    Icon: Megaphone,
+    description: `Command attention in a crowded feed. We leverage the power of Facebook and Instagram through data-driven Meta campaigns. By combining granular targeting with scroll-stopping creative, we turn social engagement into measurable revenue.`,
+    tags: ["Meta Ads", "Instagram", "Facebook", "Growth"],
+  },
+  {
+    id: 4,
+    url: preview.galleryNew,
+    title: "Creative Design",
+    Icon: Paintbrush,
+    description: `Aesthetics with an appetite for results. From foundational branding to high-impact ad visuals, we bridge the gap between art and commerce. We create bold, cohesive designs that demand attention and reinforce your brand’s authority.`,
+    tags: ["Branding", "Visual Identity", "Art Direction", "Design"],
+  },
+];
 
 export default function AboutPage() {
   return (
@@ -45,7 +99,7 @@ export default function AboutPage() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-4xl md:text-6xl font-bold text-[#1c1c1c] mb-6 leading-tight">
-                CRAFTING <span className="text-[#1c3e8d]">DIGITAL</span> EXCELLENCE
+                CRAFTING <span className="text-[#1c3e8d]">MARKETING</span> EXCELLENCE
               </h2>
             </motion.div>
             <motion.div
@@ -55,9 +109,7 @@ export default function AboutPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <p className="text-xl md:text-2xl font-light text-[#1c1c1c] leading-relaxed">
-                We are a creative agency dedicated to transforming ideas into impactful digital reality. 
-                From stunning visuals to robust infrastructure, we build the tools you need to win the game.
-                Our team blends passion, innovation, and technical expertise to deliver results that matter.
+                Welcome to Tars Marketing, your "Marketing Marvels" in the digital space. We help brands rise above the noise using a mix of creative social strategy, seamless web development, cutting edge web applications, and data-driven advertising.
               </p>
             </motion.div>
           </div>
@@ -146,8 +198,8 @@ export default function AboutPage() {
               <h2 className="text-center text-sm md:text-lg font-semibold tracking-[0.3em] text-[#D91F26] mb-4 uppercase">
                 Our Mission
               </h2>
-              <h3 className="text-center text-3xl md:text-6xl font-bold leading-tight max-w-5xl mx-auto pb-12">
-                "TO REDEFINE THE BOUNDARIES OF DIGITAL INTERACTION, CREATING A WORLD WHERE TECHNOLOGY AND ARTISTRY CONVERGE SEAMLESSLY."
+              <h3 className="text-center text-3xl md:text-6xl font-bold leading-tight max-w-5xl mx-auto pb-12 uppercase">
+                "TO HELP YOUR BUSINESS REACH—AND EXCEED—ITS POTENTIAL. WE COMBINE FRESH INNOVATION WITH DEEP INDUSTRY EXPERTISE TO TRANSFORM YOUR DIGITAL FOOTPRINT AND DRIVE SUSTAINABLE SUCCESS."
               </h3>
             </motion.div>
             <motion.div
@@ -155,7 +207,7 @@ export default function AboutPage() {
                whileInView={{ opacity: 1, scale: 1 }}
                viewport={{ once: true }}
                transition={{ duration: 0.8 }}
-               className="relative flex flex-col rounded-t-full justify-center items-center p-12 h-[100vw] md:h-[40vw] overflow-hidden group"
+               className="relative flex flex-col justify-center items-center p-12 h-[100vw] md:h-[40vw] w-full overflow-hidden group"
             >
                {/* Background Video */}
                <div className="absolute inset-0 z-0">

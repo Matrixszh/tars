@@ -18,11 +18,12 @@ import {
   DialogDescription,
   DialogContainer,
 } from '@/components/linear-modal';
-import { Plus, Paintbrush, Globe, MousePointer2, Layout } from 'lucide-react';
+import { Plus, Paintbrush, Globe, MousePointer2, Layout, Target, Code, Megaphone } from 'lucide-react';
 
 import LogoLoop from './components/LogoLoop';
 import Footer from './components/Footer';
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
+import ButtonCreativeRight from "./components/ButtonFancy";
 const preview = {
   galleryNew: { src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80" },
   globe: { src: "/globe.svg" },
@@ -33,36 +34,36 @@ const preview = {
 const items = [
   {
     id: 1,
-    url: preview.galleryNew,
-    title: "Graphic Design",
-    icon: <Paintbrush className="w-20 h-20 text-white" />,
+    url: preview.scrollReveal,
+    title: "PPC (Google Ads)",
+    Icon: Target,
     description:
-      "Immerse yourself in our cutting-edge interactive gallery, designed to showcase a diverse array of visual content with unparalleled clarity and style. This feature allows users to effortlessly navigate through high-resolution images, from awe-inspiring landscapes to intimate portraits and abstract art. With smooth transitions, intuitive controls, and responsive design, our gallery adapts to any device, ensuring a seamless browsing experience. Dive deeper into each piece with expandable information panels, offering insights into the artist, technique, and story behind each image. ",
-    tags: ["Sunrise", "Mountains", "Golden", "Scenic", "Inspiring"],
+      "Capture intent when it matters most. We architect high-performance Google Ads campaigns that channel high-intent traffic. From keyword strategy to conversion tracking, every click is an investment in your bottom line.",
+    tags: ["Google Ads", "SEM", "Conversion", "ROI"],
   },
   {
     id: 2,
     url: preview.globe,
-    title: "Globe Section",
-    icon: <Globe className="w-20 h-20 text-white" />,
-    description: `Embark on a virtual journey around the world with our state-of-the-art 3D globe feature. This interactive marvel allows users to explore geographical data, global trends, and worldwide connections with unprecedented ease and detail. Spin the globe with a flick of your mouse, zoom into street-level views, or soar high for a continental perspective. Our globe section integrates real-time data feeds, showcasing everything from climate patterns and population densities to economic indicators and cultural hotspots. Customizable layers let you focus on specific data sets, while intuitive tooltips provide in-depth information at every turn. `,
-    tags: ["Misty", "Path", "Mysterious", "Serene", "Rugged"],
+    title: "Web Development",
+    Icon: Code,
+    description: `Digital experiences engineered for conversion. We don't just build websites; we develop fast, scalable, and intuitive web applications. Our focus is on seamless user journeys that transform casual browsers into brand advocates.`,
+    tags: ["React", "Next.js", "UX/UI", "Scalable"],
   },
   {
     id: 3,
     url: preview.mousetrail,
-    title: "Image Mouse Trail",
-    icon: <MousePointer2 className="w-20 h-20 text-white" />,
-    description: `Transform your browsing experience with our mesmerizing Image Mouse Trail feature. As you move your cursor across the screen, watch in wonder as a trail of carefully curated images follows in its wake, creating a dynamic and engaging visual spectacle. This innovative feature goes beyond mere aesthetics; it's an interactive showcase of your content, products, or artwork. Each image in the trail can be clickable, leading to detailed views or related content, turning casual mouse movements into opportunities for discovery.`,
-    tags: ["Pathway", "Adventure", "Peaks", "Challenging", "Breathtaking"],
+    title: "Strategic Social Advertising",
+    Icon: Megaphone,
+    description: `Command attention in a crowded feed. We leverage the power of Facebook and Instagram through data-driven Meta campaigns. By combining granular targeting with scroll-stopping creative, we turn social engagement into measurable revenue.`,
+    tags: ["Meta Ads", "Instagram", "Facebook", "Growth"],
   },
   {
     id: 4,
-    url: preview.scrollReveal,
-    title: "Scroll Reveal",
-    icon: <Layout className="w-20 h-20 text-white" />,
-    description: `Experience the magic of content discovery with our Scroll Reveal feature. As users navigate down the page, elements gracefully fade, slide, or zoom into view, creating a sense of depth and dynamism. This technique not only captures attention but also guides the user's focus through your narrative, ensuring key messages are seen at the perfect moment. Fully customizable animations allow you to match the reveal style to your brand's personality, from subtle and elegant to bold and energetic.`,
-    tags: ["Reveal", "Animation", "Interactive", "Modern", "Engaging"],
+    url: preview.galleryNew,
+    title: "Creative Design",
+    Icon: Paintbrush,
+    description: `Aesthetics with an appetite for results. From foundational branding to high-impact ad visuals, we bridge the gap between art and commerce. We create bold, cohesive designs that demand attention and reinforce your brand’s authority.`,
+    tags: ["Branding", "Visual Identity", "Art Direction", "Design"],
   },
 ];
 
@@ -91,7 +92,13 @@ export default function Home() {
           velocity={100}
           className="custom-scroll-text"
         />
-        <BrandVisible />
+        <BrandVisible 
+          buttonLabel="About"
+          buttonHref="/about"
+          buttonBgColor="#1c3e8d"
+          buttonTextColor="#ffffff"
+          buttonCircleColor="#000000"
+        />
         <FlipCardSection />
         <ScrollVelocity
           texts={['STATS . STATS . STATS . STATS .', 'STATS . STATS . STATS . STATS . STATS']} 
@@ -130,7 +137,7 @@ export default function Home() {
                   className='aspect-square flex w-full flex-col justify-between bg-[#1c1c1c] hover:bg-neutral-800 p-6 transition-colors'
                 >
                   <div className="flex-1 flex items-center justify-center">
-                    {item.icon}
+                    <item.Icon className="w-20 h-20 text-white" />
                   </div>
                   <div className='flex w-full flex-row items-end justify-between'>
                     <DialogTitle className='text-white text-xl font-medium'>
@@ -140,14 +147,6 @@ export default function Home() {
                       <Plus className='w-6 h-6' />
                     </div>
                   </div>
-                  {/* Hidden DialogImage to maintain transition logic if needed, or we can just rely on the content */}
-                  <div className="hidden">
-                    <DialogImage
-                      src={item.url?.src || ''}
-                      alt=''
-                      className='h-0 w-0'
-                    />
-                  </div>
                 </DialogTrigger>
                 <DialogContainer className='pt-10 md:pt-20' overlayClassName='bg-[radial-gradient(125%_125%_at_50%_10%,#050505_40%,#1b1b1b_100%)]'>
                   <DialogContent
@@ -156,12 +155,9 @@ export default function Home() {
                     }}
                     className='relative flex h-auto max-h-[85vh] md:h-full mx-auto flex-col overflow-y-auto border border-zinc-800 bg-black hover:bg-neutral-950 lg:w-[900px] w-[95%] md:w-[80%]'
                   >
-                    <DialogImage
-                      // @ts-ignore
-                      src={item.url.src}
-                      alt=''
-                      className='h-auto max-h-[40vh] md:max-h-[60vh] md:h-full object-contain w-full md:w-[60%] mx-auto mt-4 md:mt-0'
-                    />
+                    <div className="flex w-full md:w-[60%] items-center justify-center mx-auto mt-4 md:mt-0 h-[30vh] md:h-full">
+                      <item.Icon className="w-32 h-32 md:w-64 md:h-64 text-white" />
+                    </div>
                     <div className='p-6'>
                       <DialogTitle className='text-3xl md:text-5xl text-white'>
                         {item.title}
@@ -186,6 +182,9 @@ export default function Home() {
               </Dialog>
             );
           })}
+        </div>
+        <div className="flex justify-center mt-12">
+          <ButtonCreativeRight label="Services" href="/services" />
         </div>
       </div>
       <ScrollVelocity

@@ -2,10 +2,27 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import ButtonCreativeRight from './ButtonFancy';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const BrandVisible = () => {
+interface BrandVisibleProps {
+  buttonLabel?: string;
+  buttonHref?: string;
+  buttonBgColor?: string;
+  buttonTextColor?: string;
+  buttonCircleColor?: string;
+  buttonHoverTextColor?: string;
+}
+
+const BrandVisible = ({
+  buttonLabel = "About",
+  buttonHref = "/about",
+  buttonBgColor,
+  buttonTextColor,
+  buttonCircleColor,
+  buttonHoverTextColor
+}: BrandVisibleProps) => {
   const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const textRef = useRef<HTMLParagraphElement>(null);
@@ -78,8 +95,18 @@ const BrandVisible = () => {
         {/* Right Content */}
         <div className="flex-1 w-full">
           <p ref={textRef} className="text-[#1c1c1c] text-lg md:text-xl leading-relaxed max-w-2xl ml-auto font-medium">
-            Our network provides the infrastructure to scale decentralized AI3.0 applications on-chain—hyper-scalable permanent data storage, super fast data availability & flexible EVM-compatible decoupled execution.
+            Welcome to Tars Marketing — your digital growth partner. We empower brands to stand out and scale through strategic social media marketing, high-performance website development, innovative web applications, and results-focused, data-driven advertising .
           </p>
+          <div className="pt-10">
+            <ButtonCreativeRight 
+              label={buttonLabel} 
+              href={buttonHref}
+              bgColor={buttonBgColor}
+              textColor={buttonTextColor}
+              circleColor={buttonCircleColor}
+              hoverTextColor={buttonHoverTextColor}
+            />
+          </div>
         </div>
       </div>
     </section>
