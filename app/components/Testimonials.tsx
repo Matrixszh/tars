@@ -6,18 +6,18 @@ import { motion, AnimatePresence } from 'motion/react';
 const testimonials = [
   {
     id: 1,
-    text: "Our network provides the infrastructure to scale decentralized AI3.0 applications on-chain—hyper-scalable permanent data storage, superOur network",
-    author: "Zain"
+    text: "TARS Marketing helped us improve our brand and built a clean, professional website. Their Google Ads brought us real and relevant leads, and we saw a clear return on investment. These leads helped us grow our reach and business.",
+    author: "Josh, Promide"
   },
   {
     id: 2,
-    text: "The team exceeded our expectations with their attention to detail and innovative solutions. A truly transformative experience for our brand.",
-    author: "Sarah"
+    text: "When Nexcon started, we had no online presence at all. TARS Marketing helped us build our digital presence from scratch and reach the right audience.",
+    author: "Josh, Nexcon"
   },
   {
     id: 3,
-    text: "Professional, efficient, and incredibly talented. They turned our vague ideas into a concrete, stunning reality that our users love.",
-    author: "Michael"
+    text: "Generating relevant B2B leads used to be our biggest hurdle. Tars Marketing changed that by delivering high-quality prospects that directly boosted our sales. They truly understand the B2B landscape. Tars Marketing delivered exceptional Google Ads services with expert insights and robust results, making them a highly recommended choice for digital marketing.",
+    author: "Josh, Acme"
   }
 ];
 
@@ -44,7 +44,7 @@ export default function Testimonials() {
 
         {/* Right Side */}
         <div className="flex flex-col items-center md:items-end space-y-6">
-          <div className="relative w-full max-w-md aspect-square bg-[#1c1c1c] p-8 md:p-12 flex flex-col justify-center">
+          <div className="relative w-full max-w-xl bg-[#1c1c1c] p-8 md:p-12 flex flex-col justify-center min-h-[320px] md:min-h-[400px]">
              <AnimatePresence mode="wait">
                 <motion.div
                   key={current}
