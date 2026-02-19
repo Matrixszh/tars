@@ -15,7 +15,7 @@ import {
   DialogDescription,
   DialogContainer,
 } from '@/components/linear-modal';
-import { X, Search, PenTool, Zap, Rocket, Building2, Globe, Cpu, Layers, Hexagon, Target, Code, Megaphone, Paintbrush } from 'lucide-react';
+import { X, Search, PenTool, Zap, Rocket, Target, Code, Megaphone, Paintbrush } from 'lucide-react';
 
 export default function ServicesPage() {
   const services = [
@@ -57,13 +57,15 @@ export default function ServicesPage() {
     }
   ];
 
-  const clientLogos = [
-    { node: <div className="flex items-center gap-2 font-black text-2xl text-[#1c1c1c] uppercase"><Building2 className="w-8 h-8"/> TechNova</div>, title: "TechNova" },
-    { node: <div className="flex items-center gap-2 font-black text-2xl text-[#1c1c1c] uppercase"><Globe className="w-8 h-8"/> GreenLeaf</div>, title: "GreenLeaf" },
-    { node: <div className="flex items-center gap-2 font-black text-2xl text-[#1c1c1c] uppercase"><Zap className="w-8 h-8"/> Velocity</div>, title: "Velocity" },
-    { node: <div className="flex items-center gap-2 font-black text-2xl text-[#1c1c1c] uppercase"><Cpu className="w-8 h-8"/> Quantum</div>, title: "Quantum" },
-    { node: <div className="flex items-center gap-2 font-black text-2xl text-[#1c1c1c] uppercase"><Layers className="w-8 h-8"/> Elevate</div>, title: "Elevate" },
-    { node: <div className="flex items-center gap-2 font-black text-2xl text-[#1c1c1c] uppercase"><Hexagon className="w-8 h-8"/> Horizon</div>, title: "Horizon" },
+  const imageLogos = [
+    { src: "/LC.png", alt: "Company 1" },
+    { src: "/LC1.png", alt: "Company 2" },
+    { src: "/LC3.png", alt: "Company 3" },
+    { src: "/LC4.png", alt: "Company 1" },
+    { src: "/LC5.png", alt: "Company 2" },
+    { src: "/LC6.png", alt: "Company 3" },
+    { src: "/LC7.png", alt: "Company 2" },
+    { src: "/LC8.png", alt: "Company 3" },
   ];
 
   const processSteps = [
@@ -103,7 +105,7 @@ export default function ServicesPage() {
               </h3>
                <div style={{ height: '100px', position: 'relative', overflow: 'hidden', backgroundColor: 'transparent'}}>
               <LogoLoop 
-                logos={clientLogos}
+                logos={imageLogos}
                 speed={100}
                 direction="left"
                 logoHeight={60}
