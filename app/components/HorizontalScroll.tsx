@@ -9,7 +9,7 @@ const items = [
     title: "PASSION",
     subtext: "Fueling every project with intense dedication and creative fire.",
     color: "bg-[#1c1c1c]",
-    img: "/cu.png"
+    img: "/cu2.jpg"
   },
   {
     id: 2,

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
-import { FaBolt, FaEnvelope, FaFire } from 'react-icons/fa';
+import { FaBolt, FaEnvelope, FaFire, FaRocket } from 'react-icons/fa';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { EmblaCarouselType } from 'embla-carousel';
@@ -11,31 +11,41 @@ interface CardData {
   icon: React.ReactNode;
   title: string;
   description: string;
+  imageSrc: string;
+  imageAlt: string;
 }
 const cardData: CardData[] = [
   {
     id: 1,
     icon: <FaBolt size={200} className="text-[#1c1c1c]" />,
     title: "Performance-Driven Strategy",
-    description: "We don’t guess — we analyze. Every campaign is built on real data, audience insights, and measurable KPIs to ensure consistent growth and ROI."
+    description: "We don’t guess — we analyze. Every campaign is built on real data, audience insights, and measurable KPIs to ensure consistent growth and ROI.",
+    imageSrc: "/cu.png",
+    imageAlt: "Mountain landscape with dynamic lighting"
   },
   {
     id: 2,
     icon: <FaEnvelope size={200} className="text-[#1c1c1c]" />,
     title: "Creative Brand Storytelling",
-    description: "From scroll-stopping visuals to compelling narratives, we craft content that builds emotional connection and makes your brand unforgettable."
+    description: "From scroll-stopping visuals to compelling narratives, we craft content that builds emotional connection and makes your brand unforgettable.",
+    imageSrc: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80",
+    imageAlt: "Abstract lights representing digital creativity"
   },
   {
     id: 3,
     icon: <FaFire size={200} className="text-[#1c1c1c]" />,
     title: "Paid Ads That Convert",
-    description: "We design high-converting ad funnels across Meta, Google, and other platforms — optimizing every click, impression, and conversion."
+    description: "We design high-converting ad funnels across Meta, Google, and other platforms — optimizing every click, impression, and conversion.",
+    imageSrc: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&q=80",
+    imageAlt: "City view from above representing reach and scale"
   },
   {
     id: 4,
-    icon: <FaBolt size={200} className="text-[#1c1c1c]" />,
+    icon: <FaRocket size={200} className="text-[#1c1c1c]" />,
     title: "Scalable Digital Growth",
-    description: "Whether you're a startup or scaling brand, our systems are built to grow with you — expanding reach, leads, and revenue sustainably."
+    description: "Whether you're a startup or scaling brand, our systems are built to grow with you — expanding reach, leads, and revenue sustainably.",
+    imageSrc: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80",
+    imageAlt: "Rocket launch symbolizing rapid growth"
   }
 ];
 
@@ -57,8 +67,8 @@ const FlipCard = ({ data, isMobile }: { data: CardData, isMobile?: boolean }) =>
         <div className="absolute w-full h-full [backface-visibility:hidden] bg-[#1c3e8d] border-4 border-[#1c1c1c]">
           <div className="relative w-full h-full">
              <Image 
-               src="/hotel.jpg" 
-               alt="Card Background" 
+               src={data.imageSrc}
+               alt={data.imageAlt}
                fill
                className="object-cover opacity-50 "
              />

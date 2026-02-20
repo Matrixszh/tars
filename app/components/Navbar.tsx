@@ -1,9 +1,27 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <nav className="absolute top-0 left-0 right-0 z-20 px-6 py-6 font-['Poppins']">
@@ -122,6 +140,27 @@ const Navbar = () => {
           </button>
         </div>
       </div>
+
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-6 z-40 h-12 w-12 rounded-full bg-white text-[#1c1c1c] shadow-lg border border-[#1c1c1c] flex items-center justify-center hover:bg-[#1c1c1c] hover:text-white transition-colors"
+          aria-label="Scroll to top"
+        >
+          <svg
+            className="w-5 h-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M12 19V5" />
+            <path d="M5 12l7-7 7 7" />
+          </svg>
+        </button>
+      )}
     </nav>
   );
 };
