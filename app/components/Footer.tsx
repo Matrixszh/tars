@@ -1,4 +1,5 @@
 import React from 'react';
+import { Instagram, Facebook, Mail } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -29,12 +30,39 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-base font-light">
-          <a href="mailto:tarxmarketing@gmail.com" className="hover:text-[#1c3e8d] underline underline-offset-4 decoration-1 transition-colors">
-            tarxmarketing@gmail.com
+          <a
+            href="mailto:info@tarsmarketing.com"
+            className="hover:text-[#1c3e8d] underline underline-offset-4 decoration-1 transition-colors"
+          >
+            info@tarsmarketing.com
           </a>
-          <a href="tel:+916309323553" className="hover:text-[#1c3e8d] transition-colors">
-            +91 6309323553
-          </a>
+          <div className="flex items-center gap-4 text-[#f2efe9]">
+            <a
+              href="https://www.instagram.com/tarsmarketing?igsh=MXd5bnpyMXQzZ2J3eg=="
+              target="_blank"
+              rel="noreferrer"
+              aria-label="TARS Marketing on Instagram"
+              className="hover:text-[#1c3e8d] transition-colors"
+            >
+              <Instagram className="w-6 h-6" />
+            </a>
+            <a
+              href="https://www.facebook.com/share/1XsHj9kZ7v/?mibextid=wwXIfr"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="TARS Marketing on Facebook"
+              className="hover:text-[#1c3e8d] transition-colors"
+            >
+              <Facebook className="w-6 h-6" />
+            </a>
+            <a
+              href="mailto:info@tarsmarketing.com"
+              aria-label="Email TARS Marketing"
+              className="hover:text-[#1c3e8d] transition-colors"
+            >
+              <Mail className="w-6 h-6" />
+            </a>
+          </div>
         </div>
       </div>
     </footer>

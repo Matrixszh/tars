@@ -2,6 +2,7 @@
 import React from "react";
 import { ReactLenis } from "lenis/react";
 import { motion } from "motion/react";
+import { Instagram, Facebook, Mail } from "lucide-react";
 import HeroSection from "../components/Hero";
 import Footer from "../components/Footer";
 import Beams from "../components/Beams"
@@ -49,16 +50,37 @@ export default function ContactPage() {
                 <div className="space-y-12">
                   <div className="group">
                     <h3 className="text-xl font-bold text-[#1c3e8d] mb-2 uppercase tracking-widest">Email</h3>
-                    <a href="mailto:hello@tars.media" className="text-3xl md:text-5xl font-bold text-[#1c1c1c] hover:text-[#D91F26] transition-colors">
-                      hello@tars.media
+                    <a
+                      href="mailto:info@tarsmarketing.com"
+                      className="text-3xl md:text-5xl font-bold text-[#1c1c1c] hover:text-[#D91F26] transition-colors inline-flex items-center gap-4"
+                    >
+                      <Mail className="w-8 h-8" />
+                      <span>info@tarsmarketing.com</span>
                     </a>
                   </div>
-                  
+
                   <div className="group">
-                    <h3 className="text-xl font-bold text-[#1c3e8d] mb-2 uppercase tracking-widest">Phone</h3>
-                    <a href="tel:+1234567890" className="text-3xl md:text-5xl font-bold text-[#1c1c1c] hover:text-[#D91F26] transition-colors">
-                      +1 (234) 567-890
-                    </a>
+                    <h3 className="text-xl font-bold text-[#1c3e8d] mb-2 uppercase tracking-widest">Social</h3>
+                    <div className="flex gap-6">
+                      <a
+                        href="https://www.instagram.com/tarsmarketing?igsh=MXd5bnpyMXQzZ2J3eg=="
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-[#1c1c1c] hover:text-[#D91F26] transition-colors"
+                        aria-label="TARS Marketing on Instagram"
+                      >
+                        <Instagram className="w-10 h-10" />
+                      </a>
+                      <a
+                        href="https://www.facebook.com/share/1XsHj9kZ7v/?mibextid=wwXIfr"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-[#1c1c1c] hover:text-[#D91F26] transition-colors"
+                        aria-label="TARS Marketing on Facebook"
+                      >
+                        <Facebook className="w-10 h-10" />
+                      </a>
+                    </div>
                   </div>
 
                   <div className="group">
