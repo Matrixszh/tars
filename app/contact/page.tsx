@@ -14,6 +14,7 @@ export default function ContactPage() {
           title="CONTACT" 
           titleSize="text-xl md:text-[12rem]"
           buttonColor="bg-[#D91F26]"
+          buttonHref="/services"
           backgroundElement={
             <div className="w-full h-full bg-black">
               <Beams

@@ -82,6 +82,7 @@ export default function ServicesPage() {
           title="SERVICES" 
           titleSize="text-[12rem]"
           buttonColor="bg-[#1c3e8d]"
+          buttonHref="/contact"
           backgroundElement={
             <div className="w-full h-full">
               <FloatingLines 

@@ -71,6 +71,7 @@ export default function AboutPage() {
           title="ABOUT" 
           titleSize="text-[12rem]"
           buttonColor="bg-[#1c3e8d]"
+          buttonHref="/services"
           backgroundElement={
             <LightPillar
               topColor="#0096ff"

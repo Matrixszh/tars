@@ -1,17 +1,20 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from 'motion/react';
+import Link from 'next/link';
 
 const HeroSection = ({ 
   title = "TARS", 
   backgroundElement,
   titleSize = "text-[12rem]",
-  buttonColor = "bg-[#1c3e8d]"
+  buttonColor = "bg-[#1c3e8d]",
+  buttonHref
 }: { 
   title?: string; 
   backgroundElement?: React.ReactNode;
   titleSize?: string;
   buttonColor?: string;
+  buttonHref?: string;
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -321,24 +324,48 @@ const HeroSection = ({
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 4.0, type: "spring" }}
-            className="mt-12"
+            className="mt-12 flex justify-center"
           >
-            <button className={`text-lg px-6 py-2 ${buttonColor} hover:brightness-110 text-white rounded-2xl border border-3 border-white transition-all hover:scale-105 active:scale-95 flex items-center gap-2 mx-auto`}>
-              Explore
-              <svg  
-                className="w-5 h-5" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
+            {buttonHref ? (
+              <Link
+                href={buttonHref}
+                className={`inline-flex items-center gap-2 px-8 py-3 text-base md:text-lg ${buttonColor} hover:brightness-110 text-white rounded-full border border-3 border-white transition-all hover:scale-105 active:scale-95`}
               >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M14 5l7 7m0 0l-7 7m7-7H3" 
-                />
-              </svg>
-            </button>
+                Explore
+                <svg  
+                  className="w-5 h-5" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M14 5l7 7m0 0l-7 7m7-7H3" 
+                  />
+                </svg>
+              </Link>
+            ) : (
+              <button
+                className={`inline-flex items-center gap-2 px-8 py-3 text-base md:text-lg ${buttonColor} hover:brightness-110 text-white rounded-full border border-3 border-white transition-all hover:scale-105 active:scale-95`}
+              >
+                Explore
+                <svg  
+                  className="w-5 h-5" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M14 5l7 7m0 0l-7 7m7-7H3" 
+                  />
+                </svg>
+              </button>
+            )}
           </motion.div>
         </div>
       </div>

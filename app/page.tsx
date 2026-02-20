@@ -85,7 +85,9 @@ export default function Home() {
   return (
     <ReactLenis root>
       <div>
-        <HeroSection/>
+        <HeroSection
+          buttonHref="/services"
+        />
         
         <ScrollVelocity
           texts={['ABOUT . ABOUT . ABOUT . ABOUT .', 'ABOUT . ABOUT . ABOUT . ABOUT . ABOUT']} 
