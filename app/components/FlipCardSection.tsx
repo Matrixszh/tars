@@ -20,7 +20,7 @@ const cardData: CardData[] = [
     icon: <FaBolt size={200} className="text-[#1c1c1c]" />,
     title: "Performance-Driven Strategy",
     description: "We don’t guess — we analyze. Every campaign is built on real data, audience insights, and measurable KPIs to ensure consistent growth and ROI.",
-    imageSrc: "/cu2.jpg",
+    imageSrc: "/ab1.jpg",
     imageAlt: "Mountain landscape with dynamic lighting"
   },
   {
@@ -28,7 +28,7 @@ const cardData: CardData[] = [
     icon: <FaEnvelope size={200} className="text-[#1c1c1c]" />,
     title: "Creative Brand Storytelling",
     description: "From scroll-stopping visuals to compelling narratives, we craft content that builds emotional connection and makes your brand unforgettable.",
-    imageSrc: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80",
+    imageSrc: "/ab2.jpg",
     imageAlt: "Abstract lights representing digital creativity"
   },
   {
@@ -36,7 +36,7 @@ const cardData: CardData[] = [
     icon: <FaFire size={200} className="text-[#1c1c1c]" />,
     title: "Paid Ads That Convert",
     description: "We design high-converting ad funnels across Meta, Google, and other platforms — optimizing every click, impression, and conversion.",
-    imageSrc: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&q=80",
+    imageSrc: "/ab3.jpg",
     imageAlt: "City view from above representing reach and scale"
   },
   {
@@ -44,7 +44,7 @@ const cardData: CardData[] = [
     icon: <FaRocket size={200} className="text-[#1c1c1c]" />,
     title: "Scalable Digital Growth",
     description: "Whether you're a startup or scaling brand, our systems are built to grow with you — expanding reach, leads, and revenue sustainably.",
-    imageSrc: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80",
+    imageSrc: "/ab4.jpg",
     imageAlt: "Rocket launch symbolizing rapid growth"
   }
 ];
