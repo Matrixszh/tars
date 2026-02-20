@@ -9,35 +9,35 @@ const items = [
     title: "PASSION",
     subtext: "Fueling every project with intense dedication and creative fire.",
     color: "bg-[#1c1c1c]",
-    img: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&q=80"
+    img: "/cu.png"
   },
   {
     id: 2,
     title: "WORK",
     subtext: "Delivering excellence through consistent effort and precise execution.",
     color: "bg-[#D91F26]",
-    img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80"
+    img: "/ssa.png"
   },
   {
     id: 3,
     title: "MOTIVATION",
     subtext: "Driven by the desire to innovate, create, and inspire change.",
     color: "bg-[#1c1c1c]",
-    img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1600&q=80"
+    img: "/gt.png"
   },
   {
     id: 4,
     title: "INSPIRATION",
     subtext: "Drawing creativity from the world around us to build the extraordinary.",
     color: "bg-[#D91F26]",
-    img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1600&q=80"
+    img: "/webdev.png"
   },
   {
     id: 5,
     title: "BELIEVE",
     subtext: "Trusting the process and the vision we build together.",
     color: "bg-[#1c1c1c]",
-    img: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1600&q=80"
+    img: "/gads.png"
   }
 ];
 
