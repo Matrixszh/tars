@@ -20,7 +20,7 @@ const cardData: CardData[] = [
     icon: <FaBolt size={200} className="text-[#1c1c1c]" />,
     title: "Performance-Driven Strategy",
     description: "We don’t guess — we analyze. Every campaign is built on real data, audience insights, and measurable KPIs to ensure consistent growth and ROI.",
-    imageSrc: "/cu.png",
+    imageSrc: "/cu2.jpg",
     imageAlt: "Mountain landscape with dynamic lighting"
   },
   {
