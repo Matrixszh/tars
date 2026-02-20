@@ -42,17 +42,17 @@ export default function ContactPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <h2 className="text-6xl md:text-8xl font-black text-[#1c1c1c] mb-12 leading-none uppercase">
+                <h2 className="text-6xl md:text-8xl font-medium text-[#1c1c1c] mb-12 leading-none uppercase">
                   LET'S <br/>
                   <span className="text-[#D91F26]">TALK</span>
                 </h2>
                 
                 <div className="space-y-12">
                   <div className="group">
-                    <h3 className="text-xl font-bold text-[#1c3e8d] mb-2 uppercase tracking-widest">Email</h3>
+                    <h3 className="text-xl font-medium text-[#1c3e8d] mb-2 uppercase tracking-widest">Email</h3>
                     <a
                       href="mailto:info@tarsmarketing.com"
-                      className="text-3xl md:text-5xl font-bold text-[#1c1c1c] hover:text-[#D91F26] transition-colors inline-flex items-center gap-4"
+                      className="text-3xl md:text-2xl font-medium text-[#1c1c1c] hover:text-[#D91F26] transition-colors inline-flex items-center gap-4"
                     >
                       <Mail className="w-8 h-8" />
                       <span>info@tarsmarketing.com</span>
@@ -60,7 +60,7 @@ export default function ContactPage() {
                   </div>
 
                   <div className="group">
-                    <h3 className="text-xl font-bold text-[#1c3e8d] mb-2 uppercase tracking-widest">Social</h3>
+                    <h3 className="text-xl font-medium text-[#1c3e8d] mb-2 uppercase tracking-widest">Social</h3>
                     <div className="flex gap-6">
                       <a
                         href="https://www.instagram.com/tarsmarketing?igsh=MXd5bnpyMXQzZ2J3eg=="
@@ -83,14 +83,7 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="group">
-                    <h3 className="text-xl font-bold text-[#1c3e8d] mb-2 uppercase tracking-widest">Office</h3>
-                    <p className="text-2xl md:text-4xl font-medium text-[#1c1c1c]">
-                      123 Creative Blvd,<br/>
-                      Design District,<br/>
-                      NY 10012
-                    </p>
-                  </div>
+                  
                 </div>
               </motion.div>
 
