@@ -3,7 +3,6 @@ import React, { useRef, useEffect } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import ButtonCreativeRight from './ButtonFancy';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,6 +12,8 @@ const StatsSection = () => {
   const gridRef = useRef<HTMLDivElement>(null);
   const countRef1 = useRef<HTMLSpanElement>(null);
   const countRef2 = useRef<HTMLSpanElement>(null);
+  const countRef3 = useRef<HTMLSpanElement>(null);
+  const countRef4 = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -22,7 +23,6 @@ const StatsSection = () => {
     if (!section || !title || !grid) return;
 
     const ctx = gsap.context(() => {
-      // Animate Title
       gsap.fromTo(title,
         { y: 50, opacity: 0 },
         {
@@ -38,7 +38,6 @@ const StatsSection = () => {
         }
       );
 
-      // Animate Grid Items
       const items = grid.querySelectorAll('.grid-item');
       gsap.fromTo(items,
         { y: 50, opacity: 0 },
@@ -56,11 +55,12 @@ const StatsSection = () => {
         }
       );
 
-      // Animate Numbers
       [
-        { ref: countRef1.current, end: 72 },
-        { ref: countRef2.current, end: 100 }
-      ].forEach(({ ref, end }) => {
+        { ref: countRef1.current, end: 25, suffix: "+" },
+        { ref: countRef2.current, end: 150, suffix: "+" },
+        { ref: countRef3.current, end: 5, suffix: "" },
+        { ref: countRef4.current, end: 5, suffix: "" }
+      ].forEach(({ ref, end, suffix }) => {
         if (!ref) return;
         const counter = { val: 0 };
         gsap.to(counter, {
@@ -73,7 +73,7 @@ const StatsSection = () => {
             toggleActions: "play none none reverse"
           },
           onUpdate: () => {
-            ref.textContent = Math.floor(counter.val) + "+";
+            ref.textContent = Math.floor(counter.val) + suffix;
           }
         });
       });
@@ -86,18 +86,13 @@ const StatsSection = () => {
   return (
     <section ref={sectionRef} className="bg-[#f2efe9] pt-24 w-full">
       <div className="max-w-full mx-auto">
-        
-        {/* Title */}
         <h2 ref={titleRef} className="text-4xl md:text-6xl font-bold text-center mb-16 tracking-tight uppercase">
-          <span className="text-[#D91F26]">NUMBERS</span> <span className="text-[#1c1c1c]">DO WHAT</span>
+          <span className="text-[#D91F26]">NUMBERS</span> <span className="text-[#1c1c1c]">THAT</span>
           <br className="hidden md:block" />
-          <span className="text-[#1c1c1c]"> WORDS CAN'T</span>
+          <span className="text-[#1c1c1c]"> TELL OUR STORY</span>
         </h2>
 
-        {/* Grid Layout */}
         <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 w-full">
-          
-          {/* Item 1: Red Box (72+ CLIENTS) */}
           <div className="grid-item bg-[#D91F26] aspect-square md:aspect-auto md:h-[400px] p-8 md:p-12 flex flex-col justify-center items-center relative text-[#f2efe9]">
             <div className="absolute top-6 right-6">
               <FaArrowRight className="transform -rotate-45 text-2xl md:text-3xl" />
@@ -108,39 +103,36 @@ const StatsSection = () => {
             </div>
           </div>
 
-          {/* Item 2: Text Description */}
-          <div className="items-flex grid-item bg-[#f2efe9] aspect-square md:aspect-auto md:h-[400px] p-8 md:p-12 flex flex-col items-center justify-center gap-6">
-            <p className="text-[#1c1c1c] text-lg md:text-xl leading-relaxed font-medium">
-              Our network provides the infrastructure to scale decentralized AI3.0 applications on-chain—hyper-scalable permanent data storage, super fast data availability & flexible EVM-compatible decoupled execution.
-            </p>
-            <div className="w-full flex justify-start">
-              <ButtonCreativeRight label="Explore" href="/services" bgColor='#D91F26' textColor='white' />
+          <div className="grid-item bg-[#f2efe9] aspect-square md:aspect-auto md:h-[400px] p-8 md:p-12 flex flex-col justify-center items-center relative text-[#1c1c1c] border-t md:border-t-0 md:border-l border-[#1c1c1c]/10">
+            <div className="absolute top-6 right-6">
+              <FaArrowRight className="transform rotate-0 text-2xl md:text-3xl" />
+            </div>
+            <div className="text-center">
+              <span ref={countRef3} className="text-6xl md:text-8xl font-bold block mb-2">0</span>
+              <span className="text-lg md:text-xl font-semibold tracking-widest uppercase">COUNTRIES</span>
             </div>
           </div>
 
-          {/* Item 3: Text Description */}
-          <div className="items-flex grid-item bg-[#f2efe9] aspect-square md:aspect-auto md:h-[400px] p-8 md:p-12 flex flex-col items-center justify-center gap-6">
-             <p className="text-[#1c1c1c] text-lg md:text-xl leading-relaxed font-medium">
-              Our network provides the infrastructure to scale decentralized AI3.0 applications on-chain—hyper-scalable permanent data storage, super fast data availability & flexible EVM-compatible decoupled execution.
-            </p>
-            <div className="w-full flex justify-start">
-              <ButtonCreativeRight label="Explore" href="/services" bgColor='#D91F26' textColor='white' />
+          <div className="grid-item bg-[#f2efe9] aspect-square md:aspect-auto md:h-[400px] p-8 md:p-12 flex flex-col justify-center items-center relative text-[#1c1c1c] border-t border-[#1c1c1c]/10">
+            <div className="absolute top-6 right-6">
+              <FaArrowRight className="transform rotate-180 text-2xl md:text-3xl" />
+            </div>
+            <div className="text-center">
+              <span ref={countRef4} className="text-6xl md:text-8xl font-bold block mb-2">0</span>
+              <span className="text-lg md:text-xl font-semibold tracking-widest uppercase">YEARS EXPERIENCE</span>
             </div>
           </div>
 
-          {/* Item 4: Red Box (100+ PROJECTS) */}
           <div className="grid-item bg-[#D91F26] aspect-square md:aspect-auto md:h-[400px] p-8 md:p-12 flex flex-col justify-center items-center relative text-[#f2efe9] order-3 md:order-4">
             <div className="absolute top-6 right-6">
               <FaArrowRight className="transform rotate-45 text-2xl md:text-3xl" />
             </div>
-             <div className="text-center">
+            <div className="text-center">
               <span ref={countRef2} className="text-6xl md:text-8xl font-bold block mb-2">0+</span>
               <span className="text-lg md:text-xl font-semibold tracking-widest uppercase">PROJECTS</span>
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
   );
