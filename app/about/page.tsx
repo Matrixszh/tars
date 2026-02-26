@@ -208,7 +208,7 @@ export default function AboutPage() {
                whileInView={{ opacity: 1, scale: 1 }}
                viewport={{ once: true }}
                transition={{ duration: 0.8 }}
-               className="relative flex flex-col justify-center items-center p-12 h-[30vh] md:h-[40vh] w-full overflow-hidden group"
+               className="relative flex flex-col justify-center items-center p-12 h-[30vh] w-full overflow-hidden group"
             >
                {/* Background Video */}
                <div className="absolute inset-0 z-0">
