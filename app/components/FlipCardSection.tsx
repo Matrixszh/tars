@@ -87,8 +87,8 @@ const FlipCard = ({ data, isMobile }: { data: CardData, isMobile?: boolean }) =>
         {/* Back Side */}
         <div className="absolute w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] bg-[#1c3e8d] text-[#f2efe9] p-6 flex flex-col justify-center border-4 border-[#1c1c1c]">
            <div className="relative z-10">
-              <h3 className="text-4xl font-bold mb-4">{data.title}</h3>
-              <p className="text-sm md:text-base leading-relaxed opacity-90">
+              <h3 className="text-3xl md:text-xl lg:text-2xl font-bold mb-4">{data.title}</h3>
+              <p className="text-sm md:text-lg lg:text-base leading-relaxed opacity-90">
                 {data.description}
               </p>
            </div>
