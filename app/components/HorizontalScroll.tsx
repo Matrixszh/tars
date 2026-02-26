@@ -9,35 +9,21 @@ const items = [
     title: "PASSION",
     subtext: "Fueling every project with intense dedication and creative fire.",
     color: "bg-[#1c1c1c]",
-    img: "/cu2.jpg"
+    img: "/stock1.jpg"
   },
   {
     id: 2,
     title: "WORK",
     subtext: "Delivering excellence through consistent effort and precise execution.",
     color: "bg-[#D91F26]",
-    img: "/ssa.png"
+    img: "/stock2.jpg"
   },
   {
     id: 3,
     title: "MOTIVATION",
     subtext: "Driven by the desire to innovate, create, and inspire change.",
     color: "bg-[#1c1c1c]",
-    img: "/gt.png"
-  },
-  {
-    id: 4,
-    title: "INSPIRATION",
-    subtext: "Drawing creativity from the world around us to build the extraordinary.",
-    color: "bg-[#D91F26]",
-    img: "/webdev.png"
-  },
-  {
-    id: 5,
-    title: "BELIEVE",
-    subtext: "Trusting the process and the vision we build together.",
-    color: "bg-[#1c1c1c]",
-    img: "/gads.png"
+    img: "/stock3.jpg"
   }
 ];
 
@@ -47,7 +33,7 @@ export default function HorizontalScroll() {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-66.69%"]);
 
   return (
     <main>
