@@ -93,7 +93,7 @@ const StatsSection = () => {
         </h2>
 
         <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 w-full">
-          <div className="grid-item bg-[#D91F26] aspect-square md:aspect-auto md:h-[400px] p-8 md:p-12 flex flex-col justify-center items-center relative text-[#f2efe9]">
+          <div className="grid-item bg-[#D91F26] h-[200px] md:h-[400px] p-8 md:p-12 flex flex-col justify-center items-center relative text-[#f2efe9]">
             <div className="absolute top-6 right-6">
               <FaArrowRight className="transform -rotate-45 text-2xl md:text-3xl" />
             </div>
@@ -103,7 +103,7 @@ const StatsSection = () => {
             </div>
           </div>
 
-          <div className="grid-item bg-[#f2efe9] aspect-square md:aspect-auto md:h-[400px] p-8 md:p-12 flex flex-col justify-center items-center relative text-[#1c1c1c] border-t md:border-t-0 md:border-l border-[#1c1c1c]/10">
+          <div className="grid-item bg-[#f2efe9] h-[250px] md:h-[400px] p-8 md:p-12 flex flex-col justify-center items-center relative text-[#1c1c1c] border-t md:border-t-0 md:border-l border-[#1c1c1c]/10">
             <div className="absolute top-6 right-6">
               <FaArrowRight className="transform rotate-0 text-2xl md:text-3xl" />
             </div>
@@ -113,7 +113,7 @@ const StatsSection = () => {
             </div>
           </div>
 
-          <div className="grid-item bg-[#f2efe9] aspect-square md:aspect-auto md:h-[400px] p-8 md:p-12 flex flex-col justify-center items-center relative text-[#1c1c1c] border-t border-[#1c1c1c]/10">
+          <div className="grid-item bg-[#f2efe9] h-[250px] md:h-[400px] p-8 md:p-12 flex flex-col justify-center items-center relative text-[#1c1c1c] border-t border-[#1c1c1c]/10">
             <div className="absolute top-6 right-6">
               <FaArrowRight className="transform rotate-180 text-2xl md:text-3xl" />
             </div>
@@ -123,7 +123,7 @@ const StatsSection = () => {
             </div>
           </div>
 
-          <div className="grid-item bg-[#D91F26] aspect-square md:aspect-auto md:h-[400px] p-8 md:p-12 flex flex-col justify-center items-center relative text-[#f2efe9] order-3 md:order-4">
+          <div className="grid-item bg-[#D91F26] h-[250px] md:h-[400px] p-8 md:p-12 flex flex-col justify-center items-center relative text-[#f2efe9] order-3 md:order-4">
             <div className="absolute top-6 right-6">
               <FaArrowRight className="transform rotate-45 text-2xl md:text-3xl" />
             </div>
