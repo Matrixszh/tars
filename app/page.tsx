@@ -35,7 +35,7 @@ const items = [
   {
     id: 1,
     url: preview.scrollReveal,
-    title: "PPC (Google Ads)",
+    title: "Performance Marketing",
     Icon: Target,
     description:
       "Capture intent when it matters most. We architect high-performance Google Ads campaigns that channel high-intent traffic. From keyword strategy to conversion tracking, every click is an investment in your bottom line.",
@@ -43,22 +43,14 @@ const items = [
   },
   {
     id: 2,
-    url: preview.globe,
-    title: "Web Development",
+    url: preview.mousetrail,
+    title: "Webdev",
     Icon: Code,
     description: `Digital experiences engineered for conversion. We don't just build websites; we develop fast, scalable, and intuitive web applications. Our focus is on seamless user journeys that transform casual browsers into brand advocates.`,
     tags: ["React", "Next.js", "UX/UI", "Scalable"],
   },
   {
     id: 3,
-    url: preview.mousetrail,
-    title: "Strategic Social Advertising",
-    Icon: Megaphone,
-    description: `Command attention in a crowded feed. We leverage the power of Facebook and Instagram through data-driven Meta campaigns. By combining granular targeting with scroll-stopping creative, we turn social engagement into measurable revenue.`,
-    tags: ["Meta Ads", "Instagram", "Facebook", "Growth"],
-  },
-  {
-    id: 4,
     url: preview.galleryNew,
     title: "Creative Design",
     Icon: Paintbrush,
@@ -75,10 +67,11 @@ const imageLogos = [
   { src: "/LC1.png", alt: "Company 2" },
   { src: "/LC3.png", alt: "Company 3" },
   { src: "/LC4.png", alt: "Company 1" },
-  { src: "/LC5.png", alt: "Company 2" },
+  { src: "/mmlogo.png", alt: "Company 2" },
   { src: "/LC6.png", alt: "Company 3" },
   { src: "/LC7.png", alt: "Company 2" },
   { src: "/LC8.png", alt: "Company 3" },
+  { src: "/LC9.jpeg", alt: "Company 3" },
 ];
 
 export default function Home() {
@@ -116,77 +109,28 @@ export default function Home() {
         />
       </div>
       <div className='bg-[#f3f1eb] py-20 px-4'>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-4 max-w-full mx-auto'>
-          <div className='md:col-span-2 flex items-center justify-center p-8'>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-8 max-w-full mx-auto'>
+          <div className='md:col-span-3 flex items-center justify-center p-8 mb-8'>
              <h2 className='text-5xl md:text-7xl font-bold text-[#1c1c1c] uppercase tracking-tighter text-center leading-tight'>
                 Know the tools<br/>win the game
              </h2>
           </div>
-          {items.map((item, i) => {
-            return (
-              <Dialog
-                key={item.id}
-                transition={{
-                  type: 'spring',
-                  bounce: 0.5,
-                  duration: 0.9,
-                }}
-              >
-                <DialogTrigger
-                  style={{
-                    borderRadius: '0px',
-                  }}
-                  className='aspect-square flex w-full flex-col justify-between bg-[#1c1c1c] hover:bg-neutral-800 p-6 transition-colors'
-                >
-                  <div className="flex-1 flex items-center justify-center">
-                    <item.Icon className="w-20 h-20 text-white" />
-                  </div>
-                  <div className='flex w-full flex-row items-end justify-between'>
-                    <DialogTitle className='text-white text-xl font-medium'>
-                      {item.title}
-                    </DialogTitle>
-                    <div className='text-white'>
-                      <Plus className='w-6 h-6' />
-                    </div>
-                  </div>
-                </DialogTrigger>
-                <DialogContainer className='pt-10 md:pt-20' overlayClassName='bg-[radial-gradient(125%_125%_at_50%_10%,#050505_40%,#1b1b1b_100%)]'>
-                  <DialogContent
-                    style={{
-                      borderRadius: '24px',
-                    }}
-                    className='relative flex h-auto max-h-[85vh] md:h-full mx-auto flex-col overflow-y-auto border border-zinc-800 bg-black hover:bg-neutral-950 lg:w-[900px] w-[95%] md:w-[80%]'
-                  >
-                    <div className="flex w-full md:w-[60%] items-center justify-center mx-auto mt-4 md:mt-0 h-[30vh] md:h-full">
-                      <item.Icon className="w-32 h-32 md:w-64 md:h-64 text-white" />
-                    </div>
-                    <div className='p-6'>
-                      <DialogTitle className='text-3xl md:text-5xl text-white'>
-                        {item.title}
-                      </DialogTitle>
-
-                      <DialogDescription
-                        disableLayoutAnimation
-                        variants={{
-                          initial: { opacity: 0, scale: 0.8, y: -40 },
-                          animate: { opacity: 1, scale: 1, y: 0 },
-                          exit: { opacity: 0, scale: 0.8, y: -50 },
-                        }}
-                      >
-                        <p className='mt-2 text-zinc-300'>
-                          {item.description}
-                        </p>
-                      </DialogDescription>
-                    </div>
-                    <DialogClose className='text-white bg-zinc-800 p-4 hover:bg-zinc-700 rounded-lg' />
-                  </DialogContent>
-                </DialogContainer>
-              </Dialog>
-            );
-          })}
-        </div>
-        <div className="flex justify-center mt-12">
-          <ButtonCreativeRight label="Services" href="/services" />
+          {items.map((item) => (
+            <div key={item.id} className="flex flex-col gap-6 group">
+              <div className="relative aspect-square w-full overflow-hidden bg-[#1c1c1c]">
+                <div className="absolute inset-0 bg-gray-500/20 z-10 mix-blend-multiply transition-opacity duration-300 group-hover:opacity-0" />
+                <Image
+                  src={item.url.src}
+                  alt={item.title}
+                  fill
+                  className="object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
+                />
+              </div>
+              <h3 className="text-2xl md:text-3xl font-bold text-[#1c1c1c] uppercase tracking-tight text-center">
+                {item.title}
+              </h3>
+            </div>
+          ))}
         </div>
       </div>
       <ScrollVelocity

@@ -7,17 +7,22 @@ const testimonials = [
   {
     id: 1,
     text: "TARS Marketing helped us improve our brand and built a clean, professional website. Their Google Ads brought us real and relevant leads, and we saw a clear return on investment. These leads helped us grow our reach and business.",
-    author: "Josh, Promide"
+    author: "Promide"
   },
   {
     id: 2,
     text: "When Nexcon started, we had no online presence at all. TARS Marketing helped us build our digital presence from scratch and reach the right audience.",
-    author: "Josh, Nexcon"
+    author: "Nexcon"
   },
   {
     id: 3,
     text: "Generating relevant B2B leads used to be our biggest hurdle. Tars Marketing changed that by delivering high-quality prospects that directly boosted our sales. They truly understand the B2B landscape. Tars Marketing delivered exceptional Google Ads services with expert insights and robust results, making them a highly recommended choice for digital marketing.",
-    author: "Josh, Acme"
+    author: "Acme"
+  },
+  {
+    id: 4,
+    text: "Tars Marketing delivered exceptional Google Ads services with expert insights, and robust results, making them a highly recommended choice for digital marketing.",
+    author: "Josh"
   }
 ];
 

@@ -62,10 +62,11 @@ export default function ServicesPage() {
     { src: "/LC1.png", alt: "Company 2" },
     { src: "/LC3.png", alt: "Company 3" },
     { src: "/LC4.png", alt: "Company 1" },
-    { src: "/LC5.png", alt: "Company 2" },
+    { src: "/mmlogo.png", alt: "Company 2" },
     { src: "/LC6.png", alt: "Company 3" },
     { src: "/LC7.png", alt: "Company 2" },
     { src: "/LC8.png", alt: "Company 3" },
+    { src: "/LC9.jpeg", alt: "Company 3" },
   ];
 
   const processSteps = [
