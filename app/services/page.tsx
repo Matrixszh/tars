@@ -209,7 +209,7 @@ export default function ServicesPage() {
 
            <div className="bg-[#f2efe9] pt-10 rounded-t-[60px] border-t-4 border-black">
              <CurvedLoop 
-               marqueeText="BOLD ✦ TACKY ✦ CREATIVE ✦ LOUD ✦ "
+               marqueeText="BOLD ✦ CREATIVE ✦ LOUD ✦ "
                speed={3}
                curveAmount={500}
                direction="left"
