@@ -3,7 +3,7 @@ import { Instagram, Facebook, Mail } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1c1c1c] text-[#f2efe9] py-16 px-6 md:px-12 font-['Poppins']">
+    <footer className="bg-[#1c1c1c] text-[#f2efe9] pb-16 px-6 md:px-12 font-['Poppins']">
       <div className="max-w-[1400px] mx-auto flex flex-col gap-10">
         {/* Top Section */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
