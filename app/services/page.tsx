@@ -75,7 +75,7 @@ export default function ServicesPage() {
           }
         />
 
-        <div className="bg-white rounded-t-[80px] -mt-[80px] relative z-10 pt-24 pb-12">
+        <div className="bg-white rounded-t-[80px] -mt-[80px] relative z-10 pt-24 ">
            
            <div className="max-w-[1400px] mx-auto px-6 md:px-12 mb-20">
              <motion.h2 
@@ -83,7 +83,7 @@ export default function ServicesPage() {
                whileInView={{ opacity: 1, y: 0 }}
                className="text-5xl md:text-7xl font-bold text-[#1c1c1c] mb-16 text-center uppercase tracking-tighter"
              >
-               Services <span className="text-[#D91F26]">We Provide</span>
+               Services <span className="text-[#1c3e8d]">We Provide</span>
              </motion.h2>
              
              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -139,7 +139,7 @@ export default function ServicesPage() {
                 </div>
              </div>
 
-             <div className="mb-20 pt-20">
+             <div className=" pt-20">
               <h3 className="text-center text-sm font-bold tracking-[0.3em] text-[#1c1c1c] mb-12 uppercase">
                 Trusted By
               </h3>

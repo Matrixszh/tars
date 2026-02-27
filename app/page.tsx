@@ -132,6 +132,9 @@ export default function Home() {
             </div>
           ))}
         </div>
+        <div className="flex justify-center mt-12">
+           <ButtonCreativeRight label="Services" href="/services" />
+        </div>
       </div>
       <ScrollVelocity
           texts={['TESTIMONIALS . TESTIMONIALS . TESTIMONIALS . TESTIMONIALS .', 'TESTIMONIALS . TESTIMONIALS . TESTIMONIALS . TESTIMONIALS . TESTIMONIALS']} 
