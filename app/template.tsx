@@ -64,7 +64,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
             transition={{ delay: 0.8, duration: 0.5 }}
             className="text-white text-xl md:text-2xl font-light tracking-[0.5em] mt-4 font-['Poppins']"
           >
-            MEDIA
+            MARKETING
           </motion.span>
         </div>
       </motion.div>
