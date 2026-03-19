@@ -84,7 +84,7 @@ export default function Home() {
         
         <ScrollVelocity
           texts={['ABOUT . ABOUT . ABOUT . ABOUT .', 'ABOUT . ABOUT . ABOUT . ABOUT . ABOUT']} 
-          velocity={100}
+          velocity={10}
           className="custom-scroll-text"
         />
         <BrandVisible 
@@ -97,14 +97,14 @@ export default function Home() {
         <FlipCardSection />
         <ScrollVelocity
           texts={['STATS . STATS . STATS . STATS .', 'STATS . STATS . STATS . STATS . STATS']} 
-          velocity={50}
+          velocity={10}
           className="custom-scroll-text bg-[#D91F26]"
         />
         <StatsSection />
         <HorizontalScroll/>
         <ScrollVelocity
           texts={['SERVICES . SERVICES . SERVICES . SERVICES .', 'SERVICES . SERVICES . SERVICES . SERVICES . SERVICES']} 
-          velocity={100}
+          velocity={10}
           className="custom-scroll-text bg-[#1c1c1c]"
         />
       </div>
@@ -138,7 +138,7 @@ export default function Home() {
       </div>
       <ScrollVelocity
           texts={['TESTIMONIALS . TESTIMONIALS . TESTIMONIALS . TESTIMONIALS .', 'TESTIMONIALS . TESTIMONIALS . TESTIMONIALS . TESTIMONIALS . TESTIMONIALS']} 
-          velocity={100}
+          velocity={10}
           className="custom-scroll-text"
         />
       <Testimonials />
