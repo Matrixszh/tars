@@ -14,7 +14,7 @@ export default function ServicesPage() {
     {
       title: "PPC (Google Ads)",
       description: "Capture intent when it matters most. We architect high-performance Google Ads campaigns that maximize ROI.",
-      imageSrc: "/gads.png"
+      imageSrc: "/gads1.png"
     },
     {
       title: "Web Development",
