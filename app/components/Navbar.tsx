@@ -1,18 +1,14 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence, type Transition, type Variants } from 'motion/react';
 import { useLenis } from 'lenis/react';
+import Link from 'next/link';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   // Prevent scrolling when menu is open
   useEffect(() => {
@@ -40,38 +36,44 @@ const Navbar = () => {
     }
   };
 
-  const menuVariants = {
+  const menuEnterTransition: Transition = {
+    duration: 0.6,
+    ease: [0.33, 1, 0.68, 1],
+    staggerChildren: 0.1,
+    delayChildren: 0.2
+  };
+
+  const menuExitTransition: Transition = {
+    duration: 0.5,
+    ease: [0.33, 1, 0.68, 1],
+    staggerChildren: 0.05,
+    staggerDirection: -1
+  };
+
+  const menuVariants: Variants = {
     initial: { x: '100%' },
     animate: { 
       x: 0,
-      transition: {
-        duration: 0.6,
-        ease: [0.33, 1, 0.68, 1], // Cubic bezier for smooth, settled stop
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      } as any
+      transition: menuEnterTransition
     },
     exit: { 
       x: '100%',
-      transition: {
-        duration: 0.5,
-        ease: [0.33, 1, 0.68, 1],
-        staggerChildren: 0.05,
-        staggerDirection: -1
-      } as any
+      transition: menuExitTransition
     }
   };
 
-  const menuItemVariants = {
+  const menuItemTransition: Transition = {
+    type: "spring",
+    damping: 20,
+    stiffness: 100
+  };
+
+  const menuItemVariants: Variants = {
     initial: { x: 50, opacity: 0 },
     animate: { 
       x: 0, 
       opacity: 1,
-      transition: {
-        type: "spring",
-        damping: 20,
-        stiffness: 100
-      } as any
+      transition: menuItemTransition
     },
     exit: { x: 50, opacity: 0 }
   };
@@ -86,13 +88,13 @@ const Navbar = () => {
         <div className="max-w-full mx-auto flex items-center justify-between">
           {/* Logo */}
           <div className="h-8 md:h-15 w-auto">
-            <a href="/">
+            <Link href="/">
               <img 
                 src="/logo.png"
                 alt="TXRS Logo"
                 className="h-full w-auto object-contain"
               />
-            </a>
+            </Link>
           </div>
           
           {/* Desktop Navigation Links */}
@@ -155,7 +157,7 @@ const Navbar = () => {
       </nav>
 
       {/* Mobile Menu Portal */}
-      {mounted && createPortal(
+      {typeof document !== 'undefined' && createPortal(
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div 
@@ -195,7 +197,7 @@ const Navbar = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Let's Talk
+                  {"Let's Talk"}
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>

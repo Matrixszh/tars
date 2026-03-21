@@ -24,7 +24,7 @@ interface DialogContextType {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   uniqueId: string;
-  triggerRef: React.RefObject<HTMLDivElement>;
+  triggerRef: React.RefObject<HTMLDivElement | null>;
 }
 
 const DialogContext = React.createContext<DialogContextType | null>(null);
@@ -54,7 +54,6 @@ function DialogProvider({ children, transition }: DialogProviderProps) {
 
   return (
     <DialogContext.Provider
-      //@ts-ignore
       value={contextValue}
     >
       <MotionConfig transition={transition}>{children}</MotionConfig>
@@ -131,10 +130,8 @@ type DialogContent = {
 function DialogContent({ children, className, style }: DialogContent) {
   const { setIsOpen, isOpen, uniqueId, triggerRef } = useDialog();
   const containerRef = useRef<HTMLDivElement>(null);
-  const [firstFocusableElement, setFirstFocusableElement] =
-    useState<HTMLElement | null>(null);
-  const [lastFocusableElement, setLastFocusableElement] =
-    useState<HTMLElement | null>(null);
+  const firstFocusableElementRef = useRef<HTMLElement | null>(null);
+  const lastFocusableElementRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -142,6 +139,8 @@ function DialogContent({ children, className, style }: DialogContent) {
         setIsOpen(false);
       }
       if (event.key === 'Tab') {
+        const firstFocusableElement = firstFocusableElementRef.current;
+        const lastFocusableElement = lastFocusableElementRef.current;
         if (!firstFocusableElement || !lastFocusableElement) return;
 
         if (event.shiftKey) {
@@ -163,7 +162,7 @@ function DialogContent({ children, className, style }: DialogContent) {
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
     };
-  }, [setIsOpen, firstFocusableElement, lastFocusableElement]);
+  }, [setIsOpen]);
 
   useEffect(() => {
     if (isOpen) {
@@ -173,10 +172,10 @@ function DialogContent({ children, className, style }: DialogContent) {
         'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
       );
       if (focusableElements && focusableElements.length > 0) {
-        setFirstFocusableElement(focusableElements[0] as HTMLElement);
-        setLastFocusableElement(
-          focusableElements[focusableElements.length - 1] as HTMLElement
-        );
+        firstFocusableElementRef.current = focusableElements[0] as HTMLElement;
+        lastFocusableElementRef.current = focusableElements[
+          focusableElements.length - 1
+        ] as HTMLElement;
         // Delay focus slightly to allow animation to start
         requestAnimationFrame(() => {
           (focusableElements[0] as HTMLElement).focus();
@@ -188,6 +187,8 @@ function DialogContent({ children, className, style }: DialogContent) {
       }
     } else {
       document.body.style.overflow = '';
+      firstFocusableElementRef.current = null;
+      lastFocusableElementRef.current = null;
       triggerRef.current?.focus();
     }
   }, [isOpen, triggerRef]);
@@ -234,9 +235,10 @@ function DialogContainer({
   overlayClassName,
 }: DialogContainerProps) {
   const { isOpen, setIsOpen, uniqueId } = useDialog();
-  const [mounted, setMounted] = useState(false);
+  const isBrowser = typeof document !== 'undefined';
 
   useEffect(() => {
+    if (!isBrowser) return;
     const drawerWrapper = document.querySelectorAll('[drawer-wrapper]');
 
     if (isOpen) {
@@ -256,16 +258,9 @@ function DialogContainer({
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
     };
-  }, [isOpen]);
+  }, [isBrowser, isOpen, setIsOpen]);
 
-  useEffect(() => {
-    setMounted(true);
-    return () => {
-      setMounted(false);
-    };
-  }, []);
-
-  if (!mounted) return null;
+  if (!isBrowser) return null;
 
   return createPortal(
     <AnimatePresence initial={false} mode='wait'>

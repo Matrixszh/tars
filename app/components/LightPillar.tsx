@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 
 interface LightPillarProps {
@@ -41,19 +41,13 @@ const LightPillar: React.FC<LightPillarProps> = ({
   const geometryRef = useRef<THREE.PlaneGeometry | null>(null);
   const mouseRef = useRef<THREE.Vector2>(new THREE.Vector2(0, 0));
   const timeRef = useRef<number>(0);
-  const [webGLSupported, setWebGLSupported] = useState<boolean>(true);
 
-  // Check WebGL support
   useEffect(() => {
+    if (!containerRef.current) return;
+
     const canvas = document.createElement('canvas');
     const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-    if (!gl) {
-      setWebGLSupported(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (!containerRef.current || !webGLSupported) return;
+    if (!gl) return;
 
     const container = containerRef.current;
     const width = container.clientWidth;
@@ -98,7 +92,6 @@ const LightPillar: React.FC<LightPillarProps> = ({
       });
     } catch (error) {
       console.error('Failed to create WebGL renderer:', error);
-      setWebGLSupported(false);
       return;
     }
 
@@ -400,20 +393,8 @@ const LightPillar: React.FC<LightPillarProps> = ({
     pillarHeight,
     noiseIntensity,
     pillarRotation,
-    webGLSupported,
     quality
   ]);
-
-  if (!webGLSupported) {
-    return (
-      <div
-        className={`w-full h-full absolute top-0 left-0 flex items-center justify-center bg-black/10 text-gray-500 text-sm ${className}`}
-        style={{ mixBlendMode }}
-      >
-        WebGL not supported
-      </div>
-    );
-  }
 
   return (
     <div ref={containerRef} className={`w-full h-full absolute top-0 left-0 ${className}`} style={{ mixBlendMode }} />

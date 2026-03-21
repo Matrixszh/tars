@@ -110,7 +110,7 @@ export default function AboutPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <p className="text-xl md:text-2xl font-light text-[#1c1c1c] leading-relaxed">
-                Welcome to Tars Marketing, your "Marketing Marvels" in the digital space. We help brands rise above the noise using a mix of creative social strategy, seamless web development, cutting edge web applications, and data-driven advertising.
+                Welcome to Tars Marketing, your &quot;Marketing Marvels&quot; in the digital space. We help brands rise above the noise using a mix of creative social strategy, seamless web development, cutting edge web applications, and data-driven advertising.
               </p>
             </motion.div>
           </div>
@@ -152,7 +152,7 @@ export default function AboutPage() {
                 Our Vision
               </h2>
               <h3 className="text-3xl md:text-6xl font-bold leading-tight max-w-5xl mx-auto pb-12">
-                "TO REDEFINE THE BOUNDARIES OF DIGITAL INTERACTION, CREATING A WORLD WHERE TECHNOLOGY AND ARTISTRY CONVERGE SEAMLESSLY."
+                &quot;TO REDEFINE THE BOUNDARIES OF DIGITAL INTERACTION, CREATING A WORLD WHERE TECHNOLOGY AND ARTISTRY CONVERGE SEAMLESSLY.&quot;
               </h3>
             </motion.div>
             <motion.div
@@ -200,7 +200,7 @@ export default function AboutPage() {
                 Our Mission
               </h2>
               <h3 className="text-center text-3xl md:text-6xl font-bold leading-tight max-w-5xl mx-auto pb-12 uppercase">
-                "TO HELP YOUR BUSINESS REACH—AND EXCEED—ITS POTENTIAL. WE COMBINE FRESH INNOVATION WITH DEEP INDUSTRY EXPERTISE TO TRANSFORM YOUR DIGITAL FOOTPRINT AND DRIVE SUSTAINABLE SUCCESS."
+                &quot;TO HELP YOUR BUSINESS REACH—AND EXCEED—ITS POTENTIAL. WE COMBINE FRESH INNOVATION WITH DEEP INDUSTRY EXPERTISE TO TRANSFORM YOUR DIGITAL FOOTPRINT AND DRIVE SUSTAINABLE SUCCESS.&quot;
               </h3>
             </motion.div>
             <motion.div

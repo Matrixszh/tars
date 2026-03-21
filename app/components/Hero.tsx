@@ -124,7 +124,7 @@ const HeroSection = ({
                   className="inline-block hover:text-gray-200 transition-colors"
                   whileHover={{ 
                     scale: 1.1,
-                    rotate: Math.random() * 10 - 5,
+                    rotate: ((index * 17) % 11) - 5,
                     transition: { duration: 0.2 }
                   }}
                 >

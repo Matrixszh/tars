@@ -103,7 +103,7 @@ export default function Home() {
         <StatsSection />
         <HorizontalScroll/>
         <ScrollVelocity
-          texts={['SERVICES . SERVICES . SERVICES . SERVICES .', 'SERVICES . SERVICES . SERVICES . SERVICES . SERVICES']} 
+          texts={['SERVICES . SERVICES . SERVICES . SERVICES .', 'SERVICES . SERVICES . SERVICES . SERVICES . SERVICES .']} 
           velocity={10}
           className="custom-scroll-text bg-[#1c1c1c]"
         />

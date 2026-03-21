@@ -43,7 +43,7 @@ export default function ContactPage() {
                 transition={{ duration: 0.8 }}
               >
                 <h2 className="text-6xl md:text-8xl font-medium text-[#1c1c1c] mb-12 leading-none uppercase">
-                  LET'S <br/>
+                  LET&apos;S <br/>
                   <span className="text-[#D91F26]">TALK</span>
                 </h2>
                 
