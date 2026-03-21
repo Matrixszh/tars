@@ -25,16 +25,16 @@ import Footer from './components/Footer';
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
 import ButtonCreativeRight from "./components/ButtonFancy";
 const preview = {
-  galleryNew: { src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80" },
-  globe: { src: "/globe.svg" },
-  mousetrail: { src: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80" },
+  PM: { src: "/gt.png" },
+  WD: { src: "/webdev.png" },
+  CD: { src: "/creaetivedesign.png" },
   scrollReveal: { src: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80" }
 };
 
 const items = [
   {
     id: 1,
-    url: preview.scrollReveal,
+    url: preview.PM,
     title: "Performance Marketing",
     Icon: Target,
     description:
@@ -43,7 +43,7 @@ const items = [
   },
   {
     id: 2,
-    url: preview.mousetrail,
+    url: preview.WD,
     title: "Webdev",
     Icon: Code,
     description: `Digital experiences engineered for conversion. We don't just build websites; we develop fast, scalable, and intuitive web applications. Our focus is on seamless user journeys that transform casual browsers into brand advocates.`,
@@ -51,7 +51,7 @@ const items = [
   },
   {
     id: 3,
-    url: preview.galleryNew,
+    url: preview.CD,
     title: "Creative Design",
     Icon: Paintbrush,
     description: `Aesthetics with an appetite for results. From foundational branding to high-impact ad visuals, we bridge the gap between art and commerce. We create bold, cohesive designs that demand attention and reinforce your brand’s authority.`,
