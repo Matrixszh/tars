@@ -111,7 +111,7 @@ export default function ServicesPage() {
                                      alt={service.title}
                                      fill
                                      sizes="(min-width: 768px) 50vw, 100vw"
-                                     className="object-cover transition-transform duration-500 group-hover:scale-105 grayscale group-hover:grayscale-0"
+                                     className="object-cover transition-transform duration-500 group-hover:scale-105  group-hover:grayscale-0"
                                    />
                                  </div>
                                </div>
