@@ -96,40 +96,36 @@ export default function ServicesPage() {
                        key={index}
                        className="border-4 border-black bg-white hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all hover:-translate-y-2 group overflow-hidden"
                      >
-                       <div className="grid grid-cols-[5rem_1fr] md:grid-cols-[18%_1fr]">
-                         <div className="border-r-4 border-black" />
+                      <div className="py-10 md:py-14 px-6 md:px-12">
+                        <div className="border-t-4 border-black" />
 
-                         <div className="py-10 md:py-14 px-6 md:px-12">
-                           <div className="border-t-4 border-black" />
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center py-10 md:py-14">
+                          <div className="relative">
+                            <div className="bg-white p-3 md:p-5 border-4 border-black">
+                              <div className="relative w-full aspect-[16/10] overflow-hidden bg-gray-100">
+                                <Image
+                                  src={service.imageSrc}
+                                  alt={service.title}
+                                  fill
+                                  sizes="(min-width: 768px) 50vw, 100vw"
+                                  className="object-cover transition-transform duration-500 group-hover:scale-105  group-hover:grayscale-0"
+                                />
+                              </div>
+                            </div>
+                          </div>
 
-                           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center py-10 md:py-14">
-                             <div className="relative">
-                               <div className="bg-white p-3 md:p-5 border-4 border-black">
-                                 <div className="relative w-full aspect-[16/10] overflow-hidden bg-gray-100">
-                                   <Image
-                                     src={service.imageSrc}
-                                     alt={service.title}
-                                     fill
-                                     sizes="(min-width: 768px) 50vw, 100vw"
-                                     className="object-cover transition-transform duration-500 group-hover:scale-105  group-hover:grayscale-0"
-                                   />
-                                 </div>
-                               </div>
-                             </div>
+                          <div>
+                            <h3 className="text-4xl md:text-6xl font-medium tracking-tight mb-6 text-[#1c1c1c]">
+                              {service.title}
+                            </h3>
+                            <p className="text-gray-600 leading-relaxed text-lg md:text-xl max-w-[52ch]">
+                              {service.description}
+                            </p>
+                          </div>
+                        </div>
 
-                             <div>
-                               <h3 className="text-4xl md:text-6xl font-medium tracking-tight mb-6 text-[#1c1c1c]">
-                                 {service.title}
-                               </h3>
-                               <p className="text-gray-600 leading-relaxed text-lg md:text-xl max-w-[52ch]">
-                                 {service.description}
-                               </p>
-                             </div>
-                           </div>
-
-                           <div className="border-b-4 border-black" />
-                         </div>
-                       </div>
+                        <div className="border-b-4 border-black" />
+                      </div>
                      </div>
                    ))}
                  </div>
