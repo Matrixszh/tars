@@ -1,13 +1,52 @@
 "use client";
-import React from "react";
+import React, { useMemo, useRef, useState } from "react";
 import { ReactLenis } from "lenis/react";
 import { motion } from "motion/react";
 import { Instagram, Facebook, Mail } from "lucide-react";
 import HeroSection from "../components/Hero";
 import Footer from "../components/Footer";
 import Beams from "../components/Beams"
+import emailjs from "@emailjs/browser";
 
 export default function ContactPage() {
+  const formRef = useRef<HTMLFormElement | null>(null);
+  const [submitState, setSubmitState] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [submitMessage, setSubmitMessage] = useState<string>("");
+
+  const emailJsConfig = useMemo(() => {
+    return {
+      serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "",
+      templateId: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "",
+      publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? ""
+    };
+  }, []);
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!formRef.current) return;
+
+    if (!emailJsConfig.serviceId || !emailJsConfig.templateId || !emailJsConfig.publicKey) {
+      setSubmitState("error");
+      setSubmitMessage("Email sending is not configured yet.");
+      return;
+    }
+
+    setSubmitState("sending");
+    setSubmitMessage("");
+
+    try {
+      await emailjs.sendForm(emailJsConfig.serviceId, emailJsConfig.templateId, formRef.current, {
+        publicKey: emailJsConfig.publicKey
+      });
+      formRef.current.reset();
+      setSubmitState("success");
+      setSubmitMessage("Message sent. We’ll get back to you soon.");
+    } catch {
+      setSubmitState("error");
+      setSubmitMessage("Something went wrong. Please try again, or email us directly.");
+    }
+  };
+
   return (
     <ReactLenis root>
       <div className="bg-[#f2efe9] min-h-screen font-['Poppins'] overflow-hidden">
@@ -98,12 +137,14 @@ export default function ContactPage() {
                 <div className="absolute top-0 right-0 w-32 h-32 bg-[#D91F26] rounded-bl-full opacity-50"></div>
                 <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#1c3e8d] rounded-tr-full opacity-50"></div>
 
-                <form className="relative z-10 space-y-8">
+                <form ref={formRef} onSubmit={onSubmit} className="relative z-10 space-y-8">
                   <div>
                     <label htmlFor="name" className="block text-sm font-bold uppercase tracking-widest mb-2 text-gray-400">Name</label>
                     <input 
                       type="text" 
                       id="name" 
+                      name="from_name"
+                      required
                       className="w-full bg-transparent border-b-2 border-white/20 py-4 text-2xl focus:outline-none focus:border-[#D91F26] transition-colors placeholder-white/10"
                       placeholder="YOUR NAME"
                     />
@@ -114,6 +155,8 @@ export default function ContactPage() {
                     <input 
                       type="email" 
                       id="email" 
+                      name="from_email"
+                      required
                       className="w-full bg-transparent border-b-2 border-white/20 py-4 text-2xl focus:outline-none focus:border-[#D91F26] transition-colors placeholder-white/10"
                       placeholder="YOUR@EMAIL.COM"
                     />
@@ -123,17 +166,31 @@ export default function ContactPage() {
                     <label htmlFor="message" className="block text-sm font-bold uppercase tracking-widest mb-2 text-gray-400">Message</label>
                     <textarea 
                       id="message" 
+                      name="message"
                       rows={4}
+                      required
                       className="w-full bg-transparent border-b-2 border-white/20 py-4 text-2xl focus:outline-none focus:border-[#D91F26] transition-colors placeholder-white/10 resize-none"
                       placeholder="TELL US EVERYTHING..."
                     ></textarea>
                   </div>
 
+                  {submitMessage ? (
+                    <p
+                      className={`text-sm font-medium ${
+                        submitState === "success" ? "text-green-300" : submitState === "error" ? "text-red-300" : "text-gray-300"
+                      }`}
+                      aria-live="polite"
+                    >
+                      {submitMessage}
+                    </p>
+                  ) : null}
+
                   <button 
                     type="submit"
-                    className="w-full py-6 bg-white text-black font-black text-xl uppercase tracking-widest rounded-full hover:bg-[#D91F26] hover:text-white transition-all duration-300 mt-8"
+                    disabled={submitState === "sending"}
+                    className="w-full py-6 bg-white text-black font-black text-xl uppercase tracking-widest rounded-full hover:bg-[#D91F26] hover:text-white transition-all duration-300 mt-8 disabled:opacity-60 disabled:pointer-events-none"
                   >
-                    Send Message
+                    {submitState === "sending" ? "Sending..." : "Send Message"}
                   </button>
                 </form>
               </motion.div>
